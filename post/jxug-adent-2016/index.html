@@ -1,0 +1,170 @@
+  <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Xamarinを始めてみよう </title>
+    
+	<link rel="stylesheet" href="https://aodag.github.io//css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://aodag.github.io//css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://aodag.github.io//css/theme.css" />
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="aodag6" />
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-right">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://aodag.github.io/">aodag6</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-right">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li><a href="/about/" >About</a></li>
+                
+                
+                    <li><a href="" type="application/rss+xml" target="_blank"><i class="fa fa-fw fa-rss"></i></a></li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="container page-wrap">
+    <div id="toc" class="well col-md-4 col-sm-6">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#環境とか:528a50ed2b1f99360f5996a9841186e4">環境とか</a></li>
+<li><a href="#xamarin-への期待:528a50ed2b1f99360f5996a9841186e4">xamarin への期待</a></li>
+<li><a href="#始める前に調べてみたもの:528a50ed2b1f99360f5996a9841186e4">始める前に調べてみたもの</a></li>
+<li><a href="#やってみた:528a50ed2b1f99360f5996a9841186e4">やってみた</a></li>
+<li><a href="#とりあえずやってみた感触:528a50ed2b1f99360f5996a9841186e4">とりあえずやってみた感触</a></li>
+<li><a href="#やりたいこと:528a50ed2b1f99360f5996a9841186e4">やりたいこと</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+      <h1>Xamarinを始めてみよう</h1>
+      <small class="post-meta">Dec 20, 2016</small>
+      <div class="post-content">
+        
+
+<p><a href="http://qiita.com/advent-calendar/2016/xamarin-welcome">[初心者さん・学生さん大歓迎！] Xamarin その2 Advent Calendar 2016</a> の20日目です。</p>
+
+<p>,(´_・ω・)_はい。始めてみることにしました。
+初心者向けのアドベントカレンダーにエントリしてしまいましたが、そもそも僕自身初心者です。</p>
+
+<h2 id="環境とか:528a50ed2b1f99360f5996a9841186e4">環境とか</h2>
+
+<p>なんとなくLinuxでやり始めて、xamarin-androidのビルドを試しましたが、PCLのなんかの参照がないとかで調査に時間かかりそうなので断念。
+Macなんて持ってないのでWindowsでやってみます。</p>
+
+<p>Visual Studio 2015にXamarinプラットフォーム入れました。</p>
+
+<h2 id="xamarin-への期待:528a50ed2b1f99360f5996a9841186e4">xamarin への期待</h2>
+
+<p>仕事でどうこうなどではないしMacもiOSもないので、やりたいことといったらAndroidアプリをC#で書けるということ。
+あとIS12TとかMADSMAとかなぜか持ってるので、こいつらをなんかしら活用するためにwindows phoneとかuwpとかのアプリも作りたいなと。</p>
+
+<h2 id="始める前に調べてみたもの:528a50ed2b1f99360f5996a9841186e4">始める前に調べてみたもの</h2>
+
+<p>WPFとかまあ多少いじったこともあるのでXAMLとかBindingあたりはまあいいかと思いつつ</p>
+
+<ul>
+<li>アーキテクチャっぽいところはMVVMが鉄板のよう</li>
+<li>Prism とか Unity とか使うと楽できる</li>
+<li>behaviorも使えるらしいのでUIの制御はこちらでいろいろやればよさそう</li>
+<li>Azure Mobile Appsに接続するライブラリとか認証までできるらしいのでクラウドにつなぐときはそこらへん使えばいいはず</li>
+<li>Nunit-lightとかテストツールも問題なさそう</li>
+</ul>
+
+<h2 id="やってみた:528a50ed2b1f99360f5996a9841186e4">やってみた</h2>
+
+<p>とりあえずありがちなTodoリストアプリでもやってみよう。
+Prismとか導入前にいったん手作業でMVVMを組んでみる。</p>
+
+<p><code>System.ComponentModel.INotifyPropertyChanged</code> を実装して、プロパティのsetterで <code>PropertyChanged</code> イベントを発生させるとか、 <code>ObservableCollection</code> を使うのはかわってない。
+<code>ICommand</code> の実装が <code>Xamarin.Forms</code> に用意されてるのは便利。Prismにも用意されてるのかな。</p>
+
+<p><code>Loaded</code> イベントっぽいものが見つけられなかったので、 <code>DataContext</code> にVM渡すタイミングがわからず。ひとまずXamlの中でリソースとして作成する方法にした。</p>
+
+<p>実際触り始めたのが今日(2016/12/20)なので、データベースやネットワークまでは手が届かず。(´・ω・｀)
+時間をとってじっくり触ったのが半日だけ、UI以外のとこほとんどわからないままという状況に。</p>
+
+<h2 id="とりあえずやってみた感触:528a50ed2b1f99360f5996a9841186e4">とりあえずやってみた感触</h2>
+
+<p>,(´<em>・ω・)</em> WPF触ったとき、こんなんだったよなーという感じで書いてみて動いたので変わらず使えるMVVMアーキテクチャにはほっとします。
+ただ、xamarin.formsと周辺ライブラリのバージョンコンフリクトにはまり、二回ほどプロジェクト作り直したので、そういう状況になってからのうまい復旧方法を知っておきたいと思いました。
+（まあこの手の問題はどこでも同じだろうと思いますが）</p>
+
+<h2 id="やりたいこと:528a50ed2b1f99360f5996a9841186e4">やりたいこと</h2>
+
+<p>,(´_・ω・)_　UI以外触らないといけないですよね。</p>
+
+<ul>
+<li>ローカルデータベース使う</li>
+<li>とりあえず Azure Mobile App と接続する</li>
+<li>Android Wearから音声入力など試したい</li>
+</ul>
+
+<p>明日 21日目は <a href="http://qiita.com/nia_tn1012">nia_tn1012</a>さんです。</p>
+
+        
+      </div>
+    </div>
+    <footer class="site-footer">
+    <div class="container">
+        <h4>aodag6</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <p>,(´_・ω・)_けっせらっせらー</p>
+                    <a href="mailto:"></a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <p>
+                        <span class="fa fa-fw fa-github"></span>
+                        <a href="https://github.com/aodag">aodag</a>
+                        <br>
+                        <span class="fa fa-fw fa-twitter"></span>
+                        <a href="https://twitter.com/aodag">aodag</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://aodag.github.io//js/jquery-2.1.4.min.js"></script>
+<script src="https://aodag.github.io//js/bootstrap.min.js"></script>
+
+	
+	<script>
+		(function(i,s,o,g,r,a,m){
+			i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  	ga('create', 'UA-45531156-2', 'auto');
+	  	ga('send', 'pageview');
+	</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dotnet on aodag6</title>
+    <link>https://aodag.github.io/categories/dotnet/</link>
+    <description>Recent content in Dotnet on aodag6</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Dec 2016 18:51:09 +0900</lastBuildDate>
+    <atom:link href="https://aodag.github.io/categories/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Xamarinを始めてみよう</title>
+      <link>https://aodag.github.io/post/jxug-adent-2016/</link>
+      <pubDate>Tue, 20 Dec 2016 18:51:09 +0900</pubDate>
+      
+      <guid>https://aodag.github.io/post/jxug-adent-2016/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/advent-calendar/2016/xamarin-welcome&#34;&gt;[初心者さん・学生さん大歓迎！] Xamarin その2 Advent Calendar 2016&lt;/a&gt; の20日目です。&lt;/p&gt;
+
+&lt;p&gt;,(´_・ω・)_はい。始めてみることにしました。
+初心者向けのアドベントカレンダーにエントリしてしまいましたが、そもそも僕自身初心者です。&lt;/p&gt;
+
+&lt;h2 id=&#34;環境とか:528a50ed2b1f99360f5996a9841186e4&#34;&gt;環境とか&lt;/h2&gt;
+
+&lt;p&gt;なんとなくLinuxでやり始めて、xamarin-androidのビルドを試しましたが、PCLのなんかの参照がないとかで調査に時間かかりそうなので断念。
+Macなんて持ってないのでWindowsでやってみます。&lt;/p&gt;
+
+&lt;p&gt;Visual Studio 2015にXamarinプラットフォーム入れました。&lt;/p&gt;
+
+&lt;h2 id=&#34;xamarin-への期待:528a50ed2b1f99360f5996a9841186e4&#34;&gt;xamarin への期待&lt;/h2&gt;
+
+&lt;p&gt;仕事でどうこうなどではないしMacもiOSもないので、やりたいことといったらAndroidアプリをC#で書けるということ。
+あとIS12TとかMADSMAとかなぜか持ってるので、こいつらをなんかしら活用するためにwindows phoneとかuwpとかのアプリも作りたいなと。&lt;/p&gt;
+
+&lt;h2 id=&#34;始める前に調べてみたもの:528a50ed2b1f99360f5996a9841186e4&#34;&gt;始める前に調べてみたもの&lt;/h2&gt;
+
+&lt;p&gt;WPFとかまあ多少いじったこともあるのでXAMLとかBindingあたりはまあいいかと思いつつ&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;アーキテクチャっぽいところはMVVMが鉄板のよう&lt;/li&gt;
+&lt;li&gt;Prism とか Unity とか使うと楽できる&lt;/li&gt;
+&lt;li&gt;behaviorも使えるらしいのでUIの制御はこちらでいろいろやればよさそう&lt;/li&gt;
+&lt;li&gt;Azure Mobile Appsに接続するライブラリとか認証までできるらしいのでクラウドにつなぐときはそこらへん使えばいいはず&lt;/li&gt;
+&lt;li&gt;Nunit-lightとかテストツールも問題なさそう&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;やってみた:528a50ed2b1f99360f5996a9841186e4&#34;&gt;やってみた&lt;/h2&gt;
+
+&lt;p&gt;とりあえずありがちなTodoリストアプリでもやってみよう。
+Prismとか導入前にいったん手作業でMVVMを組んでみる。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;System.ComponentModel.INotifyPropertyChanged&lt;/code&gt; を実装して、プロパティのsetterで &lt;code&gt;PropertyChanged&lt;/code&gt; イベントを発生させるとか、 &lt;code&gt;ObservableCollection&lt;/code&gt; を使うのはかわってない。
+&lt;code&gt;ICommand&lt;/code&gt; の実装が &lt;code&gt;Xamarin.Forms&lt;/code&gt; に用意されてるのは便利。Prismにも用意されてるのかな。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Loaded&lt;/code&gt; イベントっぽいものが見つけられなかったので、 &lt;code&gt;DataContext&lt;/code&gt; にVM渡すタイミングがわからず。ひとまずXamlの中でリソースとして作成する方法にした。&lt;/p&gt;
+
+&lt;p&gt;実際触り始めたのが今日(2016/12/20)なので、データベースやネットワークまでは手が届かず。(´・ω・｀)
+時間をとってじっくり触ったのが半日だけ、UI以外のとこほとんどわからないままという状況に。&lt;/p&gt;
+
+&lt;h2 id=&#34;とりあえずやってみた感触:528a50ed2b1f99360f5996a9841186e4&#34;&gt;とりあえずやってみた感触&lt;/h2&gt;
+
+&lt;p&gt;,(´&lt;em&gt;・ω・)&lt;/em&gt; WPF触ったとき、こんなんだったよなーという感じで書いてみて動いたので変わらず使えるMVVMアーキテクチャにはほっとします。
+ただ、xamarin.formsと周辺ライブラリのバージョンコンフリクトにはまり、二回ほどプロジェクト作り直したので、そういう状況になってからのうまい復旧方法を知っておきたいと思いました。
+（まあこの手の問題はどこでも同じだろうと思いますが）&lt;/p&gt;
+
+&lt;h2 id=&#34;やりたいこと:528a50ed2b1f99360f5996a9841186e4&#34;&gt;やりたいこと&lt;/h2&gt;
+
+&lt;p&gt;,(´_・ω・)_　UI以外触らないといけないですよね。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ローカルデータベース使う&lt;/li&gt;
+&lt;li&gt;とりあえず Azure Mobile App と接続する&lt;/li&gt;
+&lt;li&gt;Android Wearから音声入力など試したい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;明日 21日目は &lt;a href=&#34;http://qiita.com/nia_tn1012&#34;&gt;nia_tn1012&lt;/a&gt;さんです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>dotnet on linux</title>
+      <link>https://aodag.github.io/post/dotnet-on-linux/</link>
+      <pubDate>Tue, 05 Jul 2016 00:09:14 +0900</pubDate>
+      
+      <guid>https://aodag.github.io/post/dotnet-on-linux/</guid>
+      <description>
+
+&lt;h1 id=&#34;linuxで-net-core:df4afd37e59cf079baae59167b861135&#34;&gt;Linuxで .NET Core&lt;/h1&gt;
+
+&lt;p&gt;.NET Core が 1.0.0 リリースされたのでLinuxで使ってみます。
+とりあえずツールのインストールと ASP.NET Core を動かすまで。&lt;/p&gt;
+
+&lt;h2 id=&#34;インストールするもの:df4afd37e59cf079baae59167b861135&#34;&gt;インストールするもの&lt;/h2&gt;
+
+&lt;p&gt;とりあえずの開発をするのに必要そうなツールも一緒にインストールします。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;.NET Core SDK&lt;/li&gt;
+&lt;li&gt;Visual Studio Code
+
+&lt;ul&gt;
+&lt;li&gt;omnisharp&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;yo
+
+&lt;ul&gt;
+&lt;li&gt;aspnet-generator&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;インストール:df4afd37e59cf079baae59167b861135&#34;&gt;インストール&lt;/h2&gt;
+
+&lt;p&gt;最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。
+&lt;a href=&#34;https://github.com/dotnet/dotnet-docker/blob/master/1.0.0/debian/core-deps/Dockerfile&#34;&gt;Dockerfile&lt;/a&gt; を参考に依存ライブラリをインストールしておきましょう。&lt;/p&gt;
+
+&lt;p&gt;.NET Core は Ubuntuも正式サポートされているので、 &lt;a href=&#34;https://www.microsoft.com/net/core#ubuntu&#34;&gt;.NET Core のダウンロードページ&lt;/a&gt;からインストールできます。
+リポジトリを追加してインストールするというppaな感じです。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;dotnet-dev-1.0.0-preview-2-***&lt;/code&gt; とパッケージが複数存在しているので重複してインストールしてしまうとおかしな挙動になります。
+&lt;a href=&#34;https://github.com/dotnet/cli/blob/rel/1.0.0/scripts/obtain/uninstall/dotnet-uninstall-debian-packages.sh&#34;&gt;このあたりのスクリプト&lt;/a&gt;を使って、きっちり他のバージョンをアンインストールするようにしましょう。&lt;/p&gt;
+
+&lt;p&gt;Visual Studio Code も debパッケージが用意されています。
+&lt;a href=&#34;https://code.visualstudio.com/Updates&#34;&gt;リリースページ&lt;/a&gt;から最新のdebをダウンロードしてインストールしましょう。
+また、Omnisharpを使ったC#用の拡張が用意されているので、 VS Code 内で &lt;code&gt;Extensions: Install Extension&lt;/code&gt; を実行してインストールします。&lt;/p&gt;
+
+&lt;p&gt;.NET Core の SDK のプロジェクトテンプレートは貧弱なので、 &lt;code&gt;yo&lt;/code&gt; の &lt;code&gt;aspnet-generator&lt;/code&gt; を用意しておきましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo npm install yo aspnet-generator -g
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/OmniSharp/generator-aspnet&#34;&gt;aspnet-generator&lt;/a&gt; には ASP.NET Core の開発に役立つテンプレートが数多く用意されています。&lt;/p&gt;
+
+&lt;h2 id=&#34;動作確認:df4afd37e59cf079baae59167b861135&#34;&gt;動作確認&lt;/h2&gt;
+
+&lt;p&gt;.NET Core SDK では &lt;code&gt;dotnet&lt;/code&gt; コマンドでビルドや実行、パッケージングなどを行います。&lt;/p&gt;
+
+&lt;p&gt;とりあえず動作確認のためのディレクトリを作成します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkdir hwapp
+$ cd hwapp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;dotnet new&lt;/code&gt; で非常に簡単なプロジェクトを作成します。
+&lt;code&gt;dotnet restore&lt;/code&gt; で、依存ライブラリを初期化して、 &lt;code&gt;dotnet run&lt;/code&gt; コマンドで実行します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ dotnet new
+$ dotnet restore
+$ dotnet run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;dotnet run&lt;/code&gt; コマンドは実行時にコンパイルが必要であれば事前にコンパイルしてからプログラムを実行します。&lt;/p&gt;
+
+&lt;p&gt;アセンブリを作成してから実行する場合は、 &lt;code&gt;dotnet build&lt;/code&gt; コマンドを使ってアセンブリを作成し、 &lt;code&gt;dotnet&lt;/code&gt; コマンドに直接アセンブリファイルを指定して実行します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ dotnet build
+$ dotnet run bin/Debug/hwapp.dll
+Hello, World!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;.exe&lt;/code&gt; ファイルは作らない方針なんでしょうかね？&lt;/p&gt;
+
+&lt;h2 id=&#34;asp-net-core-を動かす:df4afd37e59cf079baae59167b861135&#34;&gt;ASP.NET Core を動かす&lt;/h2&gt;
+
+&lt;p&gt;コマンドラインの動作を確認したら、 ASP.NET Core を動かしてみます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;aspnet-generator&lt;/code&gt; を使って、プロジェクトを作成します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ yo aspnet
+? What type of application do you want to create? Empty Web Application
+? What&#39;s the name of your ASP.NET application? Hello
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;dotnet new&lt;/code&gt; はカレントディレクトリにファイルを展開しますが、 &lt;code&gt;yo&lt;/code&gt; ではプロジェクトディレクトリが作られます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd Hello
+$ dotnet restore
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;dotnet restore&lt;/code&gt; で必要なライブラリをインストールします。&lt;/p&gt;
+
+&lt;p&gt;このまま &lt;code&gt;dotnet run&lt;/code&gt; で webアプリケーションを起動します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ dotnet run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ブラウザで &lt;code&gt;http://localhost:5000&lt;/code&gt; にアクセスすれば &lt;code&gt;Hello, world&lt;/code&gt; が表示されます。&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ:df4afd37e59cf079baae59167b861135&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;結構すんなり動く&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
