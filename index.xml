@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>aodag6</title>
+    <title>aodag6 on aodag6</title>
     <link>https://aodag.github.io/</link>
-    <description>Recent content on aodag6</description>
+    <description>Recent content in aodag6 on aodag6</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Dec 2016 18:51:09 +0900</lastBuildDate>
-    <atom:link href="https://aodag.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0900</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>好きなギター</title>
+      <link>https://aodag.github.io/post/advent-2018/</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0900</pubDate>
+      
+      <guid>https://aodag.github.io/post/advent-2018/</guid>
+      <description>
+
+&lt;h2 id=&#34;作業中に聞く音楽&#34;&gt;作業中に聞く音楽&lt;/h2&gt;
+
+&lt;p&gt;みなさん作業中は音楽を聴くほうですか？
+私は作業に集中したいときは音楽を聴くほうです。日本語歌詞入りだとさすがに意識がそちらに行ってしまうので、インストか洋楽中心ですが。&lt;/p&gt;
+
+&lt;p&gt;というわけでさくっとプレイリスト&lt;/p&gt;
+
+&lt;iframe src=&#34;https://open.spotify.com/embed/user/m2dv08p9oq5agx5pv4u64yiu9/playlist/5buOIv2nLhIZpefledIjTQ&#34; width=&#34;300&#34; height=&#34;380&#34; frameborder=&#34;0&#34; allowtransparency=&#34;true&#34; allow=&#34;encrypted-media&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;なんとなく好きなギタリストで1曲ずつ選んでみたプレイリストです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Andy Timmons&lt;/li&gt;
+&lt;li&gt;Mike Stern&lt;/li&gt;
+&lt;li&gt;Steve Morse&lt;/li&gt;
+&lt;li&gt;Eric Johnson&lt;/li&gt;
+&lt;li&gt;Steve Vai&lt;/li&gt;
+&lt;li&gt;Randy Rhodes&lt;/li&gt;
+&lt;li&gt;Chris Impellitteri&lt;/li&gt;
+&lt;li&gt;Nuno Bettencourt&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;2018年&#34;&gt;2018年&lt;/h2&gt;
+
+&lt;p&gt;そういえばこれは &lt;a href=&#34;https://adventar.org/calendars/3018&#34;&gt;pyspa Advent Calendar 2016&lt;/a&gt; の　9日目なのです。
+今年のできごとをば。&lt;/p&gt;
+
+&lt;p&gt;ということで2019年も、よろしくおねがいします。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://adventar.org/calendars/3018#list-2018-12-09&#34;&gt;明日はikeの番&lt;/a&gt;です。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Xamarinを始めてみよう</title>
@@ -22,19 +63,19 @@
 &lt;p&gt;,(´_・ω・)_はい。始めてみることにしました。
 初心者向けのアドベントカレンダーにエントリしてしまいましたが、そもそも僕自身初心者です。&lt;/p&gt;
 
-&lt;h2 id=&#34;環境とか:528a50ed2b1f99360f5996a9841186e4&#34;&gt;環境とか&lt;/h2&gt;
+&lt;h2 id=&#34;環境とか&#34;&gt;環境とか&lt;/h2&gt;
 
 &lt;p&gt;なんとなくLinuxでやり始めて、xamarin-androidのビルドを試しましたが、PCLのなんかの参照がないとかで調査に時間かかりそうなので断念。
 Macなんて持ってないのでWindowsでやってみます。&lt;/p&gt;
 
 &lt;p&gt;Visual Studio 2015にXamarinプラットフォーム入れました。&lt;/p&gt;
 
-&lt;h2 id=&#34;xamarin-への期待:528a50ed2b1f99360f5996a9841186e4&#34;&gt;xamarin への期待&lt;/h2&gt;
+&lt;h2 id=&#34;xamarin-への期待&#34;&gt;xamarin への期待&lt;/h2&gt;
 
 &lt;p&gt;仕事でどうこうなどではないしMacもiOSもないので、やりたいことといったらAndroidアプリをC#で書けるということ。
 あとIS12TとかMADSMAとかなぜか持ってるので、こいつらをなんかしら活用するためにwindows phoneとかuwpとかのアプリも作りたいなと。&lt;/p&gt;
 
-&lt;h2 id=&#34;始める前に調べてみたもの:528a50ed2b1f99360f5996a9841186e4&#34;&gt;始める前に調べてみたもの&lt;/h2&gt;
+&lt;h2 id=&#34;始める前に調べてみたもの&#34;&gt;始める前に調べてみたもの&lt;/h2&gt;
 
 &lt;p&gt;WPFとかまあ多少いじったこともあるのでXAMLとかBindingあたりはまあいいかと思いつつ&lt;/p&gt;
 
@@ -46,7 +87,7 @@ Macなんて持ってないのでWindowsでやってみます。&lt;/p&gt;
 &lt;li&gt;Nunit-lightとかテストツールも問題なさそう&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;やってみた:528a50ed2b1f99360f5996a9841186e4&#34;&gt;やってみた&lt;/h2&gt;
+&lt;h2 id=&#34;やってみた&#34;&gt;やってみた&lt;/h2&gt;
 
 &lt;p&gt;とりあえずありがちなTodoリストアプリでもやってみよう。
 Prismとか導入前にいったん手作業でMVVMを組んでみる。&lt;/p&gt;
@@ -59,13 +100,13 @@ Prismとか導入前にいったん手作業でMVVMを組んでみる。&lt;/p&g
 &lt;p&gt;実際触り始めたのが今日(2016/12/20)なので、データベースやネットワークまでは手が届かず。(´・ω・｀)
 時間をとってじっくり触ったのが半日だけ、UI以外のとこほとんどわからないままという状況に。&lt;/p&gt;
 
-&lt;h2 id=&#34;とりあえずやってみた感触:528a50ed2b1f99360f5996a9841186e4&#34;&gt;とりあえずやってみた感触&lt;/h2&gt;
+&lt;h2 id=&#34;とりあえずやってみた感触&#34;&gt;とりあえずやってみた感触&lt;/h2&gt;
 
 &lt;p&gt;,(´&lt;em&gt;・ω・)&lt;/em&gt; WPF触ったとき、こんなんだったよなーという感じで書いてみて動いたので変わらず使えるMVVMアーキテクチャにはほっとします。
 ただ、xamarin.formsと周辺ライブラリのバージョンコンフリクトにはまり、二回ほどプロジェクト作り直したので、そういう状況になってからのうまい復旧方法を知っておきたいと思いました。
 （まあこの手の問題はどこでも同じだろうと思いますが）&lt;/p&gt;
 
-&lt;h2 id=&#34;やりたいこと:528a50ed2b1f99360f5996a9841186e4&#34;&gt;やりたいこと&lt;/h2&gt;
+&lt;h2 id=&#34;やりたいこと&#34;&gt;やりたいこと&lt;/h2&gt;
 
 &lt;p&gt;,(´_・ω・)_　UI以外触らないといけないですよね。&lt;/p&gt;
 
@@ -87,36 +128,30 @@ Prismとか導入前にいったん手作業でMVVMを組んでみる。&lt;/p&g
       <guid>https://aodag.github.io/post/advent-2016/</guid>
       <description>
 
-&lt;h2 id=&#34;紅茶を飲もう:bd21bbb966a52d60d932f8577794af88&#34;&gt;紅茶を飲もう&lt;/h2&gt;
+&lt;h2 id=&#34;紅茶を飲もう&#34;&gt;紅茶を飲もう&lt;/h2&gt;
 
 &lt;p&gt;今年は紅茶をまともに入れて飲むようになりました。
 ,(´_・ω・)_ということでミルクティーいれます！&lt;/p&gt;
 
-&lt;h3 id=&#34;お道具:bd21bbb966a52d60d932f8577794af88&#34;&gt;お道具&lt;/h3&gt;
+&lt;h3 id=&#34;お道具&#34;&gt;お道具&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/001.JPG&#34; alt=&#34;&#34; /&gt;
-
 紅茶セットである。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/002.JPG&#34; alt=&#34;&#34; /&gt;
-
 ルシピアで購入したティーポット。せっかくなのでボーンチャイナのもので。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/003.JPG&#34; alt=&#34;&#34; /&gt;
-
 抽出用のポット。軟水は濃くなりがちということでこちらで抽出したら茶葉をとりのぞいてさっきの白いほうにうつす。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/004.JPG&#34; alt=&#34;&#34; /&gt;
-
 &lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/005.JPG&#34; alt=&#34;&#34; /&gt;
-
 ティーカップとスプーン。ティーカップはティーポットと一緒にルシピアで購入。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/006.JPG&#34; alt=&#34;&#34; /&gt;
-
 紅茶。家の近くのG-Crefで。アールグレイのFBOP。&lt;/p&gt;
 
-&lt;h3 id=&#34;紅茶の等級:bd21bbb966a52d60d932f8577794af88&#34;&gt;紅茶の等級&lt;/h3&gt;
+&lt;h3 id=&#34;紅茶の等級&#34;&gt;紅茶の等級&lt;/h3&gt;
 
 &lt;p&gt;,(´&lt;em&gt;・ω・)&lt;/em&gt; G-Crefは農場単位でパックしてたりするセレクトティーショップだそうな。
 同じ種類の葉でも何種類もおいてあるので、等級だけは読めるようになりました。&lt;/p&gt;
@@ -124,70 +159,51 @@ Prismとか導入前にいったん手作業でMVVMを組んでみる。&lt;/p&g
 &lt;p&gt;だいたい長くなると高い等級らしいです。
 SFTGFOPだと、スーパーフィナーティッピーゴールデンフラワリーオレンジペコーだとか。&lt;/p&gt;
 
-&lt;h3 id=&#34;紅茶いれます:bd21bbb966a52d60d932f8577794af88&#34;&gt;紅茶いれます&lt;/h3&gt;
+&lt;h3 id=&#34;紅茶いれます&#34;&gt;紅茶いれます&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/007.JPG&#34; alt=&#34;&#34; /&gt;
-
 &lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/008.JPG&#34; alt=&#34;&#34; /&gt;
-
 だいたい1回で２杯分くらいいれます。
 キャディースプーンでちょい盛り2杯の葉っぱを300mlでいれてミルクティーにします。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/009.JPG&#34; alt=&#34;&#34; /&gt;
-
 &lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/010.JPG&#34; alt=&#34;&#34; /&gt;
-
 &lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/011.JPG&#34; alt=&#34;&#34; /&gt;
-
 お湯を注ぐ。勢い強めで。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/012.JPG&#34; alt=&#34;&#34; /&gt;
-
 3～5分くらい抽出&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/013.JPG&#34; alt=&#34;&#34; /&gt;
-
 その間に、お茶請けなど。MOONLIGHTはサクサクしてておいしいです。（あと名前がなんかかっこいい)&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/014.JPG&#34; alt=&#34;&#34; /&gt;
-
 そろそろミルクを用意。低脂肪などに逃げてはいけません。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/015.JPG&#34; alt=&#34;&#34; /&gt;
-
 なんとなく通っぽい感じでミルクインファースト(MIF)にします。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/016.JPG&#34; alt=&#34;&#34; /&gt;
-
 お茶できました。ベルガモットが香る。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/017.JPG&#34; alt=&#34;&#34; /&gt;
-
 茶こしで葉っぱをぬいて、ティーポットに移し替えます。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/018.JPG&#34; alt=&#34;&#34; /&gt;
-
 &lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/019.JPG&#34; alt=&#34;&#34; /&gt;
-
 &lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/020.JPG&#34; alt=&#34;&#34; /&gt;
-
 &lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/021.JPG&#34; alt=&#34;&#34; /&gt;
-
 &lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/022.JPG&#34; alt=&#34;&#34; /&gt;
-
 &lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/023.JPG&#34; alt=&#34;&#34; /&gt;
-
 そして、注ぐ！&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/024.JPG&#34; alt=&#34;&#34; /&gt;
-
 &lt;img src=&#34;https://aodag.github.io/img/2016-12-09/300x300/025.JPG&#34; alt=&#34;&#34; /&gt;
-
 MOONLIGHTと一緒にいただきます。&lt;/p&gt;
 
 &lt;p&gt;,(´_・ω・)_あったまるわぁ～&lt;/p&gt;
 
-&lt;h2 id=&#34;2016年:bd21bbb966a52d60d932f8577794af88&#34;&gt;2016年&lt;/h2&gt;
+&lt;h2 id=&#34;2016年&#34;&gt;2016年&lt;/h2&gt;
 
 &lt;p&gt;そういえばこれは &lt;a href=&#34;http://www.adventar.org/calendars/1435&#34;&gt;pyspa Advent Calendar 2016&lt;/a&gt; の　9日目なのです。
 今年のできごとをば。&lt;/p&gt;
@@ -211,12 +227,12 @@ MOONLIGHTと一緒にいただきます。&lt;/p&gt;
       <guid>https://aodag.github.io/post/aspnet-mvc-linux/</guid>
       <description>
 
-&lt;h1 id=&#34;アドレス帳アプリケーションの作成:e4bc4aa6969452f9e698376a33924d64&#34;&gt;アドレス帳アプリケーションの作成&lt;/h1&gt;
+&lt;h1 id=&#34;アドレス帳アプリケーションの作成&#34;&gt;アドレス帳アプリケーションの作成&lt;/h1&gt;
 
 &lt;p&gt;前回、とりあえず ASP.NET Core を Linux上で動かせたので、 ASP.NET Core MVC と EntityFramework Core を使って簡単な Web+DBアプリケーションを作成してみます。
 あまり Linux 固有の話はありません。&lt;/p&gt;
 
-&lt;h2 id=&#34;アドレス帳プロジェクトを作る:e4bc4aa6969452f9e698376a33924d64&#34;&gt;アドレス帳プロジェクトを作る&lt;/h2&gt;
+&lt;h2 id=&#34;アドレス帳プロジェクトを作る&#34;&gt;アドレス帳プロジェクトを作る&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;generator-aspnet&lt;/code&gt; には、 ASP.NET Core Mvc 設定済のプロジェクトを生成するジェネレータも用意されていますが、学習のため Empty Web Application から初めていきます。&lt;/p&gt;
 
@@ -229,7 +245,7 @@ $ dotnet restore
 
 &lt;p&gt;プロジェクトを生成したら、そのディレクトリに移動して &lt;code&gt;dotnet restore&lt;/code&gt; まで実行しておきます。&lt;/p&gt;
 
-&lt;h2 id=&#34;mvcを使う準備:e4bc4aa6969452f9e698376a33924d64&#34;&gt;MVCを使う準備&lt;/h2&gt;
+&lt;h2 id=&#34;mvcを使う準備&#34;&gt;MVCを使う準備&lt;/h2&gt;
 
 &lt;p&gt;ASP.NET Core MVC を使うには、まず &lt;code&gt;project.json&lt;/code&gt; にライブラリを追加します。&lt;/p&gt;
 
@@ -246,7 +262,7 @@ $ dotnet restore
 
 &lt;p&gt;VS Code を利用している場合は、 &lt;code&gt;dotnet: Restore Packages&lt;/code&gt; を実行すればよいでしょう。&lt;/p&gt;
 
-&lt;h2 id=&#34;webアプリケーションでmvcを有効にする:e4bc4aa6969452f9e698376a33924d64&#34;&gt;WebアプリケーションでMVCを有効にする&lt;/h2&gt;
+&lt;h2 id=&#34;webアプリケーションでmvcを有効にする&#34;&gt;WebアプリケーションでMVCを有効にする&lt;/h2&gt;
 
 &lt;p&gt;ライブラリがインストールできたら、アプリケーションの &lt;code&gt;Startup&lt;/code&gt; クラス内で ASP.NET Core MVC を有効にします。&lt;/p&gt;
 
@@ -278,7 +294,7 @@ $ dotnet restore
 &lt;p&gt;&lt;code&gt;Emptty Web Application&lt;/code&gt; では &lt;code&gt;Run&lt;/code&gt; メソッドになっていた部分を &lt;code&gt;UseMvcWithDefaultRoute&lt;/code&gt; の呼び出しに変更します。
 これは &lt;code&gt;{controller}/{action}/{id?}&lt;/code&gt; というルーティングを設定するメソッドです。&lt;/p&gt;
 
-&lt;h2 id=&#34;controllerを追加する:e4bc4aa6969452f9e698376a33924d64&#34;&gt;Controllerを追加する&lt;/h2&gt;
+&lt;h2 id=&#34;controllerを追加する&#34;&gt;Controllerを追加する&lt;/h2&gt;
 
 &lt;p&gt;ルーティングができたのでその先で実際に処理を行うコントローラーを追加します。
 コントローラークラスの追加も &lt;code&gt;generator-aspnet&lt;/code&gt; のサブジェネレータが用意されてるので、それを利用することにします。&lt;/p&gt;
@@ -292,7 +308,7 @@ $ yo aspnet:MvcView Home/Index.cs
 &lt;p&gt;コントローラーを追加すると、空の &lt;code&gt;Index&lt;/code&gt; メソッドだけ用意されてるので、対応するビューのファイルも生成しています。
 ビューの中身はなにもないので、単にエラーにならないだけの真っ白なページを表示できます。&lt;/p&gt;
 
-&lt;h2 id=&#34;modelを定義する:e4bc4aa6969452f9e698376a33924d64&#34;&gt;Modelを定義する&lt;/h2&gt;
+&lt;h2 id=&#34;modelを定義する&#34;&gt;Modelを定義する&lt;/h2&gt;
 
 &lt;p&gt;アドレス帳の中身を作成していきます。
 アドレス帳にのせる人物を &lt;code&gt;Person&lt;/code&gt; クラスで実装しましょう。
@@ -345,7 +361,7 @@ $ yo aspnet:Class Person
 &lt;p&gt;&lt;code&gt;FullName&lt;/code&gt; プロパティは &lt;code&gt;FirstName&lt;/code&gt;, &lt;code&gt;LastName&lt;/code&gt; から算出するプロパティです。
 またこのあとデータベースに保存するので、 &lt;code&gt;Id&lt;/code&gt; プロパティも実装しておきます。&lt;/p&gt;
 
-&lt;h2 id=&#34;modelにアトリビュートをつける:e4bc4aa6969452f9e698376a33924d64&#34;&gt;Modelにアトリビュートをつける&lt;/h2&gt;
+&lt;h2 id=&#34;modelにアトリビュートをつける&#34;&gt;Modelにアトリビュートをつける&lt;/h2&gt;
 
 &lt;p&gt;モデルクラスにアトリビュートをつけてプロパティの扱いを指定します。
 &lt;code&gt;FullName&lt;/code&gt; プロパティは算出されるものなので、データベースに保存しないように &lt;code&gt;NotMappedAttribute&lt;/code&gt; を指定します。
@@ -387,7 +403,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 &lt;p&gt;これらのアトリビュートは、　&lt;code&gt;System.ComponentModel.Annotations&lt;/code&gt; ライブラリの &lt;code&gt;System.ComponentModel.DataAnnotations&lt;/code&gt; 名前空間や &lt;code&gt;System.ComponentModel.DataAnnotations.Schema&lt;/code&gt; 名前空間に含まれています。&lt;/p&gt;
 
-&lt;h2 id=&#34;view:e4bc4aa6969452f9e698376a33924d64&#34;&gt;View&lt;/h2&gt;
+&lt;h2 id=&#34;view&#34;&gt;View&lt;/h2&gt;
 
 &lt;p&gt;モデルオブジェクトを作成してビューに表示してみます。
 とりあえずデータベースのことは忘れて、アクションメソッドの中でインスタンスを生成してビューに渡すようにします。&lt;/p&gt;
@@ -431,7 +447,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 &lt;p&gt;&lt;code&gt;@foreach&lt;/code&gt; を使って配列をループ処理します。
 また、変数の参照は &lt;code&gt;@&lt;/code&gt; の後に変数名を書くとその値を評価した結果が表示されます。&lt;/p&gt;
 
-&lt;h2 id=&#34;モデルとフォーム:e4bc4aa6969452f9e698376a33924d64&#34;&gt;モデルとフォーム&lt;/h2&gt;
+&lt;h2 id=&#34;モデルとフォーム&#34;&gt;モデルとフォーム&lt;/h2&gt;
 
 &lt;p&gt;新規作成や編集フォームのビューも作ってみましょう。
 それぞれ、 &lt;code&gt;New&lt;/code&gt;, &lt;code&gt;Edit&lt;/code&gt; アクションとして実装してみます。&lt;/p&gt;
@@ -499,7 +515,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 &lt;p&gt;&lt;code&gt;Edit&lt;/code&gt; メソッドでは、編集対象のオブジェクトをビューにモデルとして渡すようにしています。
 ここでは、仮の内容で &lt;code&gt;Person&lt;/code&gt; クラスのインスタンスを作成しています。&lt;/p&gt;
 
-&lt;h2 id=&#34;taghelperを使ってリンクを作る:e4bc4aa6969452f9e698376a33924d64&#34;&gt;TagHelperを使ってリンクを作る&lt;/h2&gt;
+&lt;h2 id=&#34;taghelperを使ってリンクを作る&#34;&gt;TagHelperを使ってリンクを作る&lt;/h2&gt;
 
 &lt;p&gt;それぞれのフォームへのリンクを追加します。&lt;/p&gt;
 
@@ -527,7 +543,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 &lt;p&gt;デフォルトのルート設定は &lt;code&gt;{controller}/{action}/{id?}&lt;/code&gt; となっているため、 &lt;code&gt;id&lt;/code&gt; が &lt;code&gt;1&lt;/code&gt; の場合では &lt;code&gt;home/edit/1&lt;/code&gt; というURLへのリンクが生成されます。&lt;/p&gt;
 
-&lt;h2 id=&#34;entityframework-core-とツールをインストールする:e4bc4aa6969452f9e698376a33924d64&#34;&gt;EntityFramework Core とツールをインストールする&lt;/h2&gt;
+&lt;h2 id=&#34;entityframework-core-とツールをインストールする&#34;&gt;EntityFramework Core とツールをインストールする&lt;/h2&gt;
 
 &lt;p&gt;モデルを永続化するために &lt;code&gt;EntityFramework Core&lt;/code&gt; を利用します。&lt;/p&gt;
 
@@ -561,7 +577,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 &lt;p&gt;&lt;code&gt;project.json&lt;/code&gt; にライブラリを追加したら、 &lt;code&gt;dotnet restore&lt;/code&gt; でライブラリをインストールします。&lt;/p&gt;
 
-&lt;h2 id=&#34;entityframework-core-でモデルを永続化する:e4bc4aa6969452f9e698376a33924d64&#34;&gt;EntityFramework Core でモデルを永続化する&lt;/h2&gt;
+&lt;h2 id=&#34;entityframework-core-でモデルを永続化する&#34;&gt;EntityFramework Core でモデルを永続化する&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;DbContext&lt;/code&gt; を継承して &lt;code&gt;ApplicationDbContext&lt;/code&gt; を作成します。&lt;/p&gt;
 
@@ -593,7 +609,7 @@ namespace Addressbook.Data
         }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;データベース接続設定:e4bc4aa6969452f9e698376a33924d64&#34;&gt;データベース接続設定&lt;/h2&gt;
+&lt;h2 id=&#34;データベース接続設定&#34;&gt;データベース接続設定&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;appsettings.json&lt;/code&gt; を作成して、データベース接続を設定します。&lt;/p&gt;
 
@@ -639,7 +655,7 @@ using System.IO;
 
 &lt;p&gt;ここで設定した &lt;code&gt;options&lt;/code&gt; が &lt;code&gt;ApplicationDbContext&lt;/code&gt; クラスのコンストラクタに渡されます。&lt;/p&gt;
 
-&lt;h2 id=&#34;migrationする:e4bc4aa6969452f9e698376a33924d64&#34;&gt;Migrationする&lt;/h2&gt;
+&lt;h2 id=&#34;migrationする&#34;&gt;Migrationする&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;ApplicationDbContext&lt;/code&gt; に &lt;code&gt;Person&lt;/code&gt; 用の &lt;code&gt;DbSet&lt;/code&gt; プロパティを追加したので、 &lt;code&gt;EntityFramework Core Tools&lt;/code&gt; を使ってテーブルを作成します。&lt;/p&gt;
 
@@ -679,12 +695,12 @@ CREATE TABLE &amp;quot;People&amp;quot; (
 &lt;p&gt;&lt;code&gt;Person&lt;/code&gt; クラスのテーブルとして &lt;code&gt;People&lt;/code&gt; テーブルが作成されています。
 また、マイグレーションのバージョンを管理するためのテーブル &lt;code&gt;__EFMigrationsHistory&lt;/code&gt; テーブルも作成されます。&lt;/p&gt;
 
-&lt;h2 id=&#34;controllerにdbcontextをインジェクションする:e4bc4aa6969452f9e698376a33924d64&#34;&gt;ControllerにDbContextをインジェクションする&lt;/h2&gt;
+&lt;h2 id=&#34;controllerにdbcontextをインジェクションする&#34;&gt;ControllerにDbContextをインジェクションする&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;ApplicationDbContext&lt;/code&gt; をコントローラーから扱うには、DependencyInjectionに登録されたオブジェクトをコンストラクタで受け取るようにします。
 単にコントローラークラスのメソッド内で &lt;code&gt;ApplicationDbContext&lt;/code&gt; クラスのインスタンスを作成してもデータベース接続が設定されていない状態のものになってしまいます。&lt;/p&gt;
 
-&lt;h2 id=&#34;フォーム処理:e4bc4aa6969452f9e698376a33924d64&#34;&gt;フォーム処理&lt;/h2&gt;
+&lt;h2 id=&#34;フォーム処理&#34;&gt;フォーム処理&lt;/h2&gt;
 
 &lt;p&gt;コントローラーでフォームの値を受け取って処理するようにしていきます。&lt;/p&gt;
 
@@ -719,7 +735,7 @@ CREATE TABLE &amp;quot;People&amp;quot; (
 
 &lt;p&gt;&lt;code&gt;IsValid&lt;/code&gt; が &lt;code&gt;false&lt;/code&gt; となる場合は、再びフォームを表示するため &lt;code&gt;New&lt;/code&gt; ビューを呼び出して処理を中断するようにします。&lt;/p&gt;
 
-&lt;h2 id=&#34;モデルを永続化する処理:e4bc4aa6969452f9e698376a33924d64&#34;&gt;モデルを永続化する処理&lt;/h2&gt;
+&lt;h2 id=&#34;モデルを永続化する処理&#34;&gt;モデルを永続化する処理&lt;/h2&gt;
 
 &lt;p&gt;受け取った &lt;code&gt;person&lt;/code&gt; オブジェクトをデータベースに保存するには &lt;code&gt;DbContext&lt;/code&gt; の &lt;code&gt;Add&lt;/code&gt; メソッドで追加した後に &lt;code&gt;SaveChanges&lt;/code&gt; メソッドでデータベースに反映します。&lt;/p&gt;
 
@@ -738,7 +754,7 @@ CREATE TABLE &amp;quot;People&amp;quot; (
 &lt;p&gt;&lt;code&gt;IsValid&lt;/code&gt; の確認後に &lt;code&gt;DbContext.Add&lt;/code&gt; と &lt;code&gt;DbContext.SaveChanges&lt;/code&gt; を呼び出します。
 保存処理が終わったら、 &lt;code&gt;RedirectToAction&lt;/code&gt; メソッドで &lt;code&gt;Index&lt;/code&gt; アクションにリダイレクトして一覧を表示させます。&lt;/p&gt;
 
-&lt;h2 id=&#34;残りのcrudアクションを実装する:e4bc4aa6969452f9e698376a33924d64&#34;&gt;残りのCRUDアクションを実装する&lt;/h2&gt;
+&lt;h2 id=&#34;残りのcrudアクションを実装する&#34;&gt;残りのCRUDアクションを実装する&lt;/h2&gt;
 
 &lt;p&gt;新規追加のアクションができあがったので残りのアクションも &lt;code&gt;EntityFramework Core&lt;/code&gt; を使った処理で実装していきます。&lt;/p&gt;
 
@@ -815,7 +831,7 @@ CREATE TABLE &amp;quot;People&amp;quot; (
 
 &lt;p&gt;これで、 &lt;code&gt;HomeController&lt;/code&gt; に Create, Retivie, Update Delete の CRUDに対応したアクションがすべてそろいました。&lt;/p&gt;
 
-&lt;h2 id=&#34;viewをまとめる:e4bc4aa6969452f9e698376a33924d64&#34;&gt;Viewをまとめる&lt;/h2&gt;
+&lt;h2 id=&#34;viewをまとめる&#34;&gt;Viewをまとめる&lt;/h2&gt;
 
 &lt;p&gt;これまで &lt;code&gt;View&lt;/code&gt; には動作に必要な最低限の内容だけを書いてあります。
 また、TagHelperの利用など、アプリケーション内で共通な設定がそれぞれのViewに記述されています。&lt;/p&gt;
@@ -869,7 +885,7 @@ CREATE TABLE &amp;quot;People&amp;quot; (
 
 &lt;p&gt;&lt;code&gt;_ViewImports.chtml&lt;/code&gt; を作成したら、それぞれの &lt;code&gt;View&lt;/code&gt; に書いていた &lt;code&gt;addTagHelper&lt;/code&gt; の設定を削除しておきましょう。&lt;/p&gt;
 
-&lt;h1 id=&#34;まとめ:e4bc4aa6969452f9e698376a33924d64&#34;&gt;まとめ&lt;/h1&gt;
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ASP.NET Core MVC には ViewとControllerの仕組みが用意されている&lt;/li&gt;
@@ -889,12 +905,12 @@ CREATE TABLE &amp;quot;People&amp;quot; (
       <guid>https://aodag.github.io/post/dotnet-on-linux/</guid>
       <description>
 
-&lt;h1 id=&#34;linuxで-net-core:df4afd37e59cf079baae59167b861135&#34;&gt;Linuxで .NET Core&lt;/h1&gt;
+&lt;h1 id=&#34;linuxで-net-core&#34;&gt;Linuxで .NET Core&lt;/h1&gt;
 
 &lt;p&gt;.NET Core が 1.0.0 リリースされたのでLinuxで使ってみます。
 とりあえずツールのインストールと ASP.NET Core を動かすまで。&lt;/p&gt;
 
-&lt;h2 id=&#34;インストールするもの:df4afd37e59cf079baae59167b861135&#34;&gt;インストールするもの&lt;/h2&gt;
+&lt;h2 id=&#34;インストールするもの&#34;&gt;インストールするもの&lt;/h2&gt;
 
 &lt;p&gt;とりあえずの開発をするのに必要そうなツールも一緒にインストールします。&lt;/p&gt;
 
@@ -912,7 +928,7 @@ CREATE TABLE &amp;quot;People&amp;quot; (
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;インストール:df4afd37e59cf079baae59167b861135&#34;&gt;インストール&lt;/h2&gt;
+&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
 
 &lt;p&gt;最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。
 &lt;a href=&#34;https://github.com/dotnet/dotnet-docker/blob/master/1.0.0/debian/core-deps/Dockerfile&#34;&gt;Dockerfile&lt;/a&gt; を参考に依存ライブラリをインストールしておきましょう。&lt;/p&gt;
@@ -934,7 +950,7 @@ CREATE TABLE &amp;quot;People&amp;quot; (
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/OmniSharp/generator-aspnet&#34;&gt;aspnet-generator&lt;/a&gt; には ASP.NET Core の開発に役立つテンプレートが数多く用意されています。&lt;/p&gt;
 
-&lt;h2 id=&#34;動作確認:df4afd37e59cf079baae59167b861135&#34;&gt;動作確認&lt;/h2&gt;
+&lt;h2 id=&#34;動作確認&#34;&gt;動作確認&lt;/h2&gt;
 
 &lt;p&gt;.NET Core SDK では &lt;code&gt;dotnet&lt;/code&gt; コマンドでビルドや実行、パッケージングなどを行います。&lt;/p&gt;
 
@@ -963,7 +979,7 @@ Hello, World!
 
 &lt;p&gt;&lt;code&gt;.exe&lt;/code&gt; ファイルは作らない方針なんでしょうかね？&lt;/p&gt;
 
-&lt;h2 id=&#34;asp-net-core-を動かす:df4afd37e59cf079baae59167b861135&#34;&gt;ASP.NET Core を動かす&lt;/h2&gt;
+&lt;h2 id=&#34;asp-net-core-を動かす&#34;&gt;ASP.NET Core を動かす&lt;/h2&gt;
 
 &lt;p&gt;コマンドラインの動作を確認したら、 ASP.NET Core を動かしてみます。&lt;/p&gt;
 
@@ -989,7 +1005,7 @@ $ dotnet restore
 
 &lt;p&gt;ブラウザで &lt;code&gt;http://localhost:5000&lt;/code&gt; にアクセスすれば &lt;code&gt;Hello, world&lt;/code&gt; が表示されます。&lt;/p&gt;
 
-&lt;h2 id=&#34;まとめ:df4afd37e59cf079baae59167b861135&#34;&gt;まとめ&lt;/h2&gt;
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;結構すんなり動く&lt;/li&gt;
@@ -1014,7 +1030,7 @@ $ dotnet restore
       <guid>https://aodag.github.io/post/first/</guid>
       <description>
 
-&lt;h2 id=&#34;これまでのブログ:e8fb9c67eba912c72729806db31eaa1b&#34;&gt;これまでのブログ&lt;/h2&gt;
+&lt;h2 id=&#34;これまでのブログ&#34;&gt;これまでのブログ&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://d.hatena.ne.jp/aodag&#34;&gt;はてな&lt;/a&gt;&lt;/li&gt;

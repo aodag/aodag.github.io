@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 20 Dec 2016 18:51:09 +0900</lastBuildDate>
-    <atom:link href="https://aodag.github.io/categories/xamarin/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://aodag.github.io/categories/xamarin/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Xamarinを始めてみよう</title>
@@ -15,68 +17,19 @@
       <pubDate>Tue, 20 Dec 2016 18:51:09 +0900</pubDate>
       
       <guid>https://aodag.github.io/post/jxug-adent-2016/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/advent-calendar/2016/xamarin-welcome&#34;&gt;[初心者さん・学生さん大歓迎！] Xamarin その2 Advent Calendar 2016&lt;/a&gt; の20日目です。&lt;/p&gt;
-
-&lt;p&gt;,(´_・ω・)_はい。始めてみることにしました。
-初心者向けのアドベントカレンダーにエントリしてしまいましたが、そもそも僕自身初心者です。&lt;/p&gt;
-
-&lt;h2 id=&#34;環境とか:528a50ed2b1f99360f5996a9841186e4&#34;&gt;環境とか&lt;/h2&gt;
-
-&lt;p&gt;なんとなくLinuxでやり始めて、xamarin-androidのビルドを試しましたが、PCLのなんかの参照がないとかで調査に時間かかりそうなので断念。
-Macなんて持ってないのでWindowsでやってみます。&lt;/p&gt;
-
-&lt;p&gt;Visual Studio 2015にXamarinプラットフォーム入れました。&lt;/p&gt;
-
-&lt;h2 id=&#34;xamarin-への期待:528a50ed2b1f99360f5996a9841186e4&#34;&gt;xamarin への期待&lt;/h2&gt;
-
-&lt;p&gt;仕事でどうこうなどではないしMacもiOSもないので、やりたいことといったらAndroidアプリをC#で書けるということ。
-あとIS12TとかMADSMAとかなぜか持ってるので、こいつらをなんかしら活用するためにwindows phoneとかuwpとかのアプリも作りたいなと。&lt;/p&gt;
-
-&lt;h2 id=&#34;始める前に調べてみたもの:528a50ed2b1f99360f5996a9841186e4&#34;&gt;始める前に調べてみたもの&lt;/h2&gt;
-
-&lt;p&gt;WPFとかまあ多少いじったこともあるのでXAMLとかBindingあたりはまあいいかと思いつつ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;アーキテクチャっぽいところはMVVMが鉄板のよう&lt;/li&gt;
-&lt;li&gt;Prism とか Unity とか使うと楽できる&lt;/li&gt;
-&lt;li&gt;behaviorも使えるらしいのでUIの制御はこちらでいろいろやればよさそう&lt;/li&gt;
-&lt;li&gt;Azure Mobile Appsに接続するライブラリとか認証までできるらしいのでクラウドにつなぐときはそこらへん使えばいいはず&lt;/li&gt;
-&lt;li&gt;Nunit-lightとかテストツールも問題なさそう&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;やってみた:528a50ed2b1f99360f5996a9841186e4&#34;&gt;やってみた&lt;/h2&gt;
-
-&lt;p&gt;とりあえずありがちなTodoリストアプリでもやってみよう。
-Prismとか導入前にいったん手作業でMVVMを組んでみる。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;System.ComponentModel.INotifyPropertyChanged&lt;/code&gt; を実装して、プロパティのsetterで &lt;code&gt;PropertyChanged&lt;/code&gt; イベントを発生させるとか、 &lt;code&gt;ObservableCollection&lt;/code&gt; を使うのはかわってない。
-&lt;code&gt;ICommand&lt;/code&gt; の実装が &lt;code&gt;Xamarin.Forms&lt;/code&gt; に用意されてるのは便利。Prismにも用意されてるのかな。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Loaded&lt;/code&gt; イベントっぽいものが見つけられなかったので、 &lt;code&gt;DataContext&lt;/code&gt; にVM渡すタイミングがわからず。ひとまずXamlの中でリソースとして作成する方法にした。&lt;/p&gt;
-
-&lt;p&gt;実際触り始めたのが今日(2016/12/20)なので、データベースやネットワークまでは手が届かず。(´・ω・｀)
-時間をとってじっくり触ったのが半日だけ、UI以外のとこほとんどわからないままという状況に。&lt;/p&gt;
-
-&lt;h2 id=&#34;とりあえずやってみた感触:528a50ed2b1f99360f5996a9841186e4&#34;&gt;とりあえずやってみた感触&lt;/h2&gt;
-
-&lt;p&gt;,(´&lt;em&gt;・ω・)&lt;/em&gt; WPF触ったとき、こんなんだったよなーという感じで書いてみて動いたので変わらず使えるMVVMアーキテクチャにはほっとします。
-ただ、xamarin.formsと周辺ライブラリのバージョンコンフリクトにはまり、二回ほどプロジェクト作り直したので、そういう状況になってからのうまい復旧方法を知っておきたいと思いました。
-（まあこの手の問題はどこでも同じだろうと思いますが）&lt;/p&gt;
-
-&lt;h2 id=&#34;やりたいこと:528a50ed2b1f99360f5996a9841186e4&#34;&gt;やりたいこと&lt;/h2&gt;
-
-&lt;p&gt;,(´_・ω・)_　UI以外触らないといけないですよね。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ローカルデータベース使う&lt;/li&gt;
-&lt;li&gt;とりあえず Azure Mobile App と接続する&lt;/li&gt;
-&lt;li&gt;Android Wearから音声入力など試したい&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;明日 21日目は &lt;a href=&#34;http://qiita.com/nia_tn1012&#34;&gt;nia_tn1012&lt;/a&gt;さんです。&lt;/p&gt;
-</description>
+      <description>[初心者さん・学生さん大歓迎！] Xamarin その2 Advent Calendar 2016 の20日目です。
+,(´_・ω・)_はい。始めてみることにしました。 初心者向けのアドベントカレンダーにエントリしてしまいましたが、そもそも僕自身初心者です。
+環境とか なんとなくLinuxでやり始めて、xamarin-androidのビルドを試しましたが、PCLのなんかの参照がないとかで調査に時間かかりそうなので断念。 Macなんて持ってないのでWindowsでやってみます。
+Visual Studio 2015にXamarinプラットフォーム入れました。
+xamarin への期待 仕事でどうこうなどではないしMacもiOSもないので、やりたいことといったらAndroidアプリをC#で書けるということ。 あとIS12TとかMADSMAとかなぜか持ってるので、こいつらをなんかしら活用するためにwindows phoneとかuwpとかのアプリも作りたいなと。
+始める前に調べてみたもの WPFとかまあ多少いじったこともあるのでXAMLとかBindingあたりはまあいいかと思いつつ
+ アーキテクチャっぽいところはMVVMが鉄板のよう Prism とか Unity とか使うと楽できる behaviorも使えるらしいのでUIの制御はこちらでいろいろやればよさそう Azure Mobile Appsに接続するライブラリとか認証までできるらしいのでクラウドにつなぐときはそこらへん使えばいいはず Nunit-lightとかテストツールも問題なさそう  やってみた とりあえずありがちなTodoリストアプリでもやってみよう。 Prismとか導入前にいったん手作業でMVVMを組んでみる。
+System.ComponentModel.INotifyPropertyChanged を実装して、プロパティのsetterで PropertyChanged イベントを発生させるとか、 ObservableCollection を使うのはかわってない。 ICommand の実装が Xamarin.Forms に用意されてるのは便利。Prismにも用意されてるのかな。
+Loaded イベントっぽいものが見つけられなかったので、 DataContext にVM渡すタイミングがわからず。ひとまずXamlの中でリソースとして作成する方法にした。
+実際触り始めたのが今日(2016/12/20)なので、データベースやネットワークまでは手が届かず。(´・ω・｀) 時間をとってじっくり触ったのが半日だけ、UI以外のとこほとんどわからないままという状況に。
+とりあえずやってみた感触 ,(´・ω・) WPF触ったとき、こんなんだったよなーという感じで書いてみて動いたので変わらず使えるMVVMアーキテクチャにはほっとします。 ただ、xamarin.formsと周辺ライブラリのバージョンコンフリクトにはまり、二回ほどプロジェクト作り直したので、そういう状況になってからのうまい復旧方法を知っておきたいと思いました。 （まあこの手の問題はどこでも同じだろうと思いますが）
+やりたいこと ,(´_・ω・)_　UI以外触らないといけないですよね。
+ ローカルデータベース使う とりあえず Azure Mobile App と接続する Android Wearから音声入力など試したい  明日 21日目は nia_tn1012さんです。</description>
     </item>
     
   </channel>

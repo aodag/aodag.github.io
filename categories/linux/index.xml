@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 Jul 2016 00:09:14 +0900</lastBuildDate>
-    <atom:link href="https://aodag.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://aodag.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>dotnet on linux</title>
@@ -15,114 +17,13 @@
       <pubDate>Tue, 05 Jul 2016 00:09:14 +0900</pubDate>
       
       <guid>https://aodag.github.io/post/dotnet-on-linux/</guid>
-      <description>
-
-&lt;h1 id=&#34;linuxで-net-core:df4afd37e59cf079baae59167b861135&#34;&gt;Linuxで .NET Core&lt;/h1&gt;
-
-&lt;p&gt;.NET Core が 1.0.0 リリースされたのでLinuxで使ってみます。
-とりあえずツールのインストールと ASP.NET Core を動かすまで。&lt;/p&gt;
-
-&lt;h2 id=&#34;インストールするもの:df4afd37e59cf079baae59167b861135&#34;&gt;インストールするもの&lt;/h2&gt;
-
-&lt;p&gt;とりあえずの開発をするのに必要そうなツールも一緒にインストールします。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;.NET Core SDK&lt;/li&gt;
-&lt;li&gt;Visual Studio Code
-
-&lt;ul&gt;
-&lt;li&gt;omnisharp&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;yo
-
-&lt;ul&gt;
-&lt;li&gt;aspnet-generator&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;インストール:df4afd37e59cf079baae59167b861135&#34;&gt;インストール&lt;/h2&gt;
-
-&lt;p&gt;最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。
-&lt;a href=&#34;https://github.com/dotnet/dotnet-docker/blob/master/1.0.0/debian/core-deps/Dockerfile&#34;&gt;Dockerfile&lt;/a&gt; を参考に依存ライブラリをインストールしておきましょう。&lt;/p&gt;
-
-&lt;p&gt;.NET Core は Ubuntuも正式サポートされているので、 &lt;a href=&#34;https://www.microsoft.com/net/core#ubuntu&#34;&gt;.NET Core のダウンロードページ&lt;/a&gt;からインストールできます。
-リポジトリを追加してインストールするというppaな感じです。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;dotnet-dev-1.0.0-preview-2-***&lt;/code&gt; とパッケージが複数存在しているので重複してインストールしてしまうとおかしな挙動になります。
-&lt;a href=&#34;https://github.com/dotnet/cli/blob/rel/1.0.0/scripts/obtain/uninstall/dotnet-uninstall-debian-packages.sh&#34;&gt;このあたりのスクリプト&lt;/a&gt;を使って、きっちり他のバージョンをアンインストールするようにしましょう。&lt;/p&gt;
-
-&lt;p&gt;Visual Studio Code も debパッケージが用意されています。
-&lt;a href=&#34;https://code.visualstudio.com/Updates&#34;&gt;リリースページ&lt;/a&gt;から最新のdebをダウンロードしてインストールしましょう。
-また、Omnisharpを使ったC#用の拡張が用意されているので、 VS Code 内で &lt;code&gt;Extensions: Install Extension&lt;/code&gt; を実行してインストールします。&lt;/p&gt;
-
-&lt;p&gt;.NET Core の SDK のプロジェクトテンプレートは貧弱なので、 &lt;code&gt;yo&lt;/code&gt; の &lt;code&gt;aspnet-generator&lt;/code&gt; を用意しておきましょう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo npm install yo aspnet-generator -g
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/OmniSharp/generator-aspnet&#34;&gt;aspnet-generator&lt;/a&gt; には ASP.NET Core の開発に役立つテンプレートが数多く用意されています。&lt;/p&gt;
-
-&lt;h2 id=&#34;動作確認:df4afd37e59cf079baae59167b861135&#34;&gt;動作確認&lt;/h2&gt;
-
-&lt;p&gt;.NET Core SDK では &lt;code&gt;dotnet&lt;/code&gt; コマンドでビルドや実行、パッケージングなどを行います。&lt;/p&gt;
-
-&lt;p&gt;とりあえず動作確認のためのディレクトリを作成します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ mkdir hwapp
-$ cd hwapp
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;dotnet new&lt;/code&gt; で非常に簡単なプロジェクトを作成します。
-&lt;code&gt;dotnet restore&lt;/code&gt; で、依存ライブラリを初期化して、 &lt;code&gt;dotnet run&lt;/code&gt; コマンドで実行します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ dotnet new
-$ dotnet restore
-$ dotnet run
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;dotnet run&lt;/code&gt; コマンドは実行時にコンパイルが必要であれば事前にコンパイルしてからプログラムを実行します。&lt;/p&gt;
-
-&lt;p&gt;アセンブリを作成してから実行する場合は、 &lt;code&gt;dotnet build&lt;/code&gt; コマンドを使ってアセンブリを作成し、 &lt;code&gt;dotnet&lt;/code&gt; コマンドに直接アセンブリファイルを指定して実行します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ dotnet build
-$ dotnet run bin/Debug/hwapp.dll
-Hello, World!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;.exe&lt;/code&gt; ファイルは作らない方針なんでしょうかね？&lt;/p&gt;
-
-&lt;h2 id=&#34;asp-net-core-を動かす:df4afd37e59cf079baae59167b861135&#34;&gt;ASP.NET Core を動かす&lt;/h2&gt;
-
-&lt;p&gt;コマンドラインの動作を確認したら、 ASP.NET Core を動かしてみます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;aspnet-generator&lt;/code&gt; を使って、プロジェクトを作成します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ yo aspnet
-? What type of application do you want to create? Empty Web Application
-? What&#39;s the name of your ASP.NET application? Hello
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;dotnet new&lt;/code&gt; はカレントディレクトリにファイルを展開しますが、 &lt;code&gt;yo&lt;/code&gt; ではプロジェクトディレクトリが作られます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cd Hello
-$ dotnet restore
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;dotnet restore&lt;/code&gt; で必要なライブラリをインストールします。&lt;/p&gt;
-
-&lt;p&gt;このまま &lt;code&gt;dotnet run&lt;/code&gt; で webアプリケーションを起動します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ dotnet run
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ブラウザで &lt;code&gt;http://localhost:5000&lt;/code&gt; にアクセスすれば &lt;code&gt;Hello, world&lt;/code&gt; が表示されます。&lt;/p&gt;
-
-&lt;h2 id=&#34;まとめ:df4afd37e59cf079baae59167b861135&#34;&gt;まとめ&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;結構すんなり動く&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Linuxで .NET Core .NET Core が 1.0.0 リリースされたのでLinuxで使ってみます。 とりあえずツールのインストールと ASP.NET Core を動かすまで。
+インストールするもの とりあえずの開発をするのに必要そうなツールも一緒にインストールします。
+ .NET Core SDK Visual Studio Code  omnisharp  yo  aspnet-generator   インストール 最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。 Dockerfile を参考に依存ライブラリをインストールしておきましょう。
+.NET Core は Ubuntuも正式サポートされているので、 .NET Core のダウンロードページからインストールできます。 リポジトリを追加してインストールするというppaな感じです。
+dotnet-dev-1.0.0-preview-2-*** とパッケージが複数存在しているので重複してインストールしてしまうとおかしな挙動になります。 このあたりのスクリプトを使って、きっちり他のバージョンをアンインストールするようにしましょう。
+Visual Studio Code も debパッケージが用意されています。 リリースページから最新のdebをダウンロードしてインストールしましょう。 また、Omnisharpを使ったC#用の拡張が用意されているので、 VS Code 内で Extensions: Install Extension を実行してインストールします。
+.NET Core の SDK のプロジェクトテンプレートは貧弱なので、 yo の aspnet-generator を用意しておきましょう。</description>
     </item>
     
   </channel>

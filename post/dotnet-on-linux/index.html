@@ -12,8 +12,6 @@
     
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.ico">
-    
-    <link href="" rel="alternate" type="application/rss+xml" title="aodag6" />
 </head>
 
   <body>
@@ -33,9 +31,6 @@
                 
                     <li><a href="/about/" >About</a></li>
                 
-                
-                    <li><a href="" type="application/rss+xml" target="_blank"><i class="fa fa-fw fa-rss"></i></a></li>
-                
             </ul>
         </div>
     </div>
@@ -45,13 +40,13 @@
     <div id="toc" class="well col-md-4 col-sm-6">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#linuxで-net-core:df4afd37e59cf079baae59167b861135">Linuxで .NET Core</a>
+<li><a href="#linuxで-net-core">Linuxで .NET Core</a>
 <ul>
-<li><a href="#インストールするもの:df4afd37e59cf079baae59167b861135">インストールするもの</a></li>
-<li><a href="#インストール:df4afd37e59cf079baae59167b861135">インストール</a></li>
-<li><a href="#動作確認:df4afd37e59cf079baae59167b861135">動作確認</a></li>
-<li><a href="#asp-net-core-を動かす:df4afd37e59cf079baae59167b861135">ASP.NET Core を動かす</a></li>
-<li><a href="#まとめ:df4afd37e59cf079baae59167b861135">まとめ</a></li>
+<li><a href="#インストールするもの">インストールするもの</a></li>
+<li><a href="#インストール">インストール</a></li>
+<li><a href="#動作確認">動作確認</a></li>
+<li><a href="#asp-net-core-を動かす">ASP.NET Core を動かす</a></li>
+<li><a href="#まとめ">まとめ</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -61,12 +56,12 @@
       <div class="post-content">
         
 
-<h1 id="linuxで-net-core:df4afd37e59cf079baae59167b861135">Linuxで .NET Core</h1>
+<h1 id="linuxで-net-core">Linuxで .NET Core</h1>
 
 <p>.NET Core が 1.0.0 リリースされたのでLinuxで使ってみます。
 とりあえずツールのインストールと ASP.NET Core を動かすまで。</p>
 
-<h2 id="インストールするもの:df4afd37e59cf079baae59167b861135">インストールするもの</h2>
+<h2 id="インストールするもの">インストールするもの</h2>
 
 <p>とりあえずの開発をするのに必要そうなツールも一緒にインストールします。</p>
 
@@ -84,7 +79,7 @@
 </ul></li>
 </ul>
 
-<h2 id="インストール:df4afd37e59cf079baae59167b861135">インストール</h2>
+<h2 id="インストール">インストール</h2>
 
 <p>最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。
 <a href="https://github.com/dotnet/dotnet-docker/blob/master/1.0.0/debian/core-deps/Dockerfile">Dockerfile</a> を参考に依存ライブラリをインストールしておきましょう。</p>
@@ -106,7 +101,7 @@
 
 <p><a href="https://github.com/OmniSharp/generator-aspnet">aspnet-generator</a> には ASP.NET Core の開発に役立つテンプレートが数多く用意されています。</p>
 
-<h2 id="動作確認:df4afd37e59cf079baae59167b861135">動作確認</h2>
+<h2 id="動作確認">動作確認</h2>
 
 <p>.NET Core SDK では <code>dotnet</code> コマンドでビルドや実行、パッケージングなどを行います。</p>
 
@@ -135,7 +130,7 @@ Hello, World!
 
 <p><code>.exe</code> ファイルは作らない方針なんでしょうかね？</p>
 
-<h2 id="asp-net-core-を動かす:df4afd37e59cf079baae59167b861135">ASP.NET Core を動かす</h2>
+<h2 id="asp-net-core-を動かす">ASP.NET Core を動かす</h2>
 
 <p>コマンドラインの動作を確認したら、 ASP.NET Core を動かしてみます。</p>
 
@@ -161,7 +156,7 @@ $ dotnet restore
 
 <p>ブラウザで <code>http://localhost:5000</code> にアクセスすれば <code>Hello, world</code> が表示されます。</p>
 
-<h2 id="まとめ:df4afd37e59cf079baae59167b861135">まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 
 <ul>
 <li>結構すんなり動く</li>
