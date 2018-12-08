@@ -10,7 +10,7 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>好きなギター</title>
+      <title>作業中に聞く好きなギタリストのプレイリスト</title>
       <link>https://aodag.github.io/post/advent-2018/</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0900</pubDate>
       
@@ -41,8 +41,13 @@
 
 &lt;h2 id=&#34;2018年&#34;&gt;2018年&lt;/h2&gt;
 
-&lt;p&gt;そういえばこれは &lt;a href=&#34;https://adventar.org/calendars/3018&#34;&gt;pyspa Advent Calendar 2016&lt;/a&gt; の　9日目なのです。
+&lt;p&gt;そういえばこれは &lt;a href=&#34;https://adventar.org/calendars/3018&#34;&gt;pyspa Advent Calendar 2018&lt;/a&gt; の　9日目なのです。
 今年のできごとをば。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;今年はあまり変わったこともないな、引っ越しも転職もしてないし&lt;/li&gt;
+&lt;li&gt;Plone Conferenceで英語ボロボロだったので、オンライン英会話を始めたところ&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;ということで2019年も、よろしくおねがいします。&lt;/p&gt;
 
