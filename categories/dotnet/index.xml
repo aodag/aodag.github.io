@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dotnet on aodag6</title>
+    <title>dotnet on aodag6</title>
     <link>https://aodag.github.io/categories/dotnet/</link>
-    <description>Recent content in Dotnet on aodag6</description>
+    <description>Recent content in dotnet on aodag6</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 20 Dec 2016 18:51:09 +0900</lastBuildDate>
@@ -27,7 +27,7 @@ xamarin への期待 仕事でどうこうなどではないしMacもiOSもな�
 System.ComponentModel.INotifyPropertyChanged を実装して、プロパティのsetterで PropertyChanged イベントを発生させるとか、 ObservableCollection を使うのはかわってない。 ICommand の実装が Xamarin.Forms に用意されてるのは便利。Prismにも用意されてるのかな。
 Loaded イベントっぽいものが見つけられなかったので、 DataContext にVM渡すタイミングがわからず。ひとまずXamlの中でリソースとして作成する方法にした。
 実際触り始めたのが今日(2016/12/20)なので、データベースやネットワークまでは手が届かず。(´・ω・｀) 時間をとってじっくり触ったのが半日だけ、UI以外のとこほとんどわからないままという状況に。
-とりあえずやってみた感触 ,(´・ω・) WPF触ったとき、こんなんだったよなーという感じで書いてみて動いたので変わらず使えるMVVMアーキテクチャにはほっとします。 ただ、xamarin.formsと周辺ライブラリのバージョンコンフリクトにはまり、二回ほどプロジェクト作り直したので、そういう状況になってからのうまい復旧方法を知っておきたいと思いました。 （まあこの手の問題はどこでも同じだろうと思いますが）
+とりあえずやってみた感触 ,(´_・ω・)_ WPF触ったとき、こんなんだったよなーという感じで書いてみて動いたので変わらず使えるMVVMアーキテクチャにはほっとします。 ただ、xamarin.formsと周辺ライブラリのバージョンコンフリクトにはまり、二回ほどプロジェクト作り直したので、そういう状況になってからのうまい復旧方法を知っておきたいと思いました。 （まあこの手の問題はどこでも同じだろうと思いますが）
 やりたいこと ,(´_・ω・)_　UI以外触らないといけないですよね。
  ローカルデータベース使う とりあえず Azure Mobile App と接続する Android Wearから音声入力など試したい  明日 21日目は nia_tn1012さんです。</description>
     </item>
@@ -40,7 +40,7 @@ Loaded イベントっぽいものが見つけられなかったので、 DataCo
       <guid>https://aodag.github.io/post/dotnet-on-linux/</guid>
       <description>Linuxで .NET Core .NET Core が 1.0.0 リリースされたのでLinuxで使ってみます。 とりあえずツールのインストールと ASP.NET Core を動かすまで。
 インストールするもの とりあえずの開発をするのに必要そうなツールも一緒にインストールします。
- .NET Core SDK Visual Studio Code  omnisharp  yo  aspnet-generator   インストール 最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。 Dockerfile を参考に依存ライブラリをインストールしておきましょう。
+ .NET Core SDK Visual Studio Code  omnisharp   yo  aspnet-generator    インストール 最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。 Dockerfile を参考に依存ライブラリをインストールしておきましょう。
 .NET Core は Ubuntuも正式サポートされているので、 .NET Core のダウンロードページからインストールできます。 リポジトリを追加してインストールするというppaな感じです。
 dotnet-dev-1.0.0-preview-2-*** とパッケージが複数存在しているので重複してインストールしてしまうとおかしな挙動になります。 このあたりのスクリプトを使って、きっちり他のバージョンをアンインストールするようにしましょう。
 Visual Studio Code も debパッケージが用意されています。 リリースページから最新のdebをダウンロードしてインストールしましょう。 また、Omnisharpを使ったC#用の拡張が用意されているので、 VS Code 内で Extensions: Install Extension を実行してインストールします。

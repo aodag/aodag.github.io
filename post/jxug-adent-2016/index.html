@@ -39,45 +39,31 @@
     <div class="container page-wrap">
     <div id="toc" class="well col-md-4 col-sm-6">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#環境とか">環境とか</a></li>
-<li><a href="#xamarin-への期待">xamarin への期待</a></li>
-<li><a href="#始める前に調べてみたもの">始める前に調べてみたもの</a></li>
-<li><a href="#やってみた">やってみた</a></li>
-<li><a href="#とりあえずやってみた感触">とりあえずやってみた感触</a></li>
-<li><a href="#やりたいこと">やりたいこと</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">環境とか</a></li>
+    <li><a href="#xamarin-">xamarin への期待</a></li>
+    <li><a href="#heading1">始める前に調べてみたもの</a></li>
+    <li><a href="#heading2">やってみた</a></li>
+    <li><a href="#heading3">とりあえずやってみた感触</a></li>
+    <li><a href="#heading4">やりたいこと</a></li>
+  </ul>
 </nav>
     </div>
       <h1>Xamarinを始めてみよう</h1>
       <small class="post-meta">Dec 20, 2016</small>
       <div class="post-content">
-        
-
-<p><a href="http://qiita.com/advent-calendar/2016/xamarin-welcome">[初心者さん・学生さん大歓迎！] Xamarin その2 Advent Calendar 2016</a> の20日目です。</p>
-
+        <p><a href="http://qiita.com/advent-calendar/2016/xamarin-welcome">[初心者さん・学生さん大歓迎！] Xamarin その2 Advent Calendar 2016</a> の20日目です。</p>
 <p>,(´_・ω・)_はい。始めてみることにしました。
 初心者向けのアドベントカレンダーにエントリしてしまいましたが、そもそも僕自身初心者です。</p>
-
-<h2 id="環境とか">環境とか</h2>
-
+<h2 id="heading">環境とか</h2>
 <p>なんとなくLinuxでやり始めて、xamarin-androidのビルドを試しましたが、PCLのなんかの参照がないとかで調査に時間かかりそうなので断念。
 Macなんて持ってないのでWindowsでやってみます。</p>
-
 <p>Visual Studio 2015にXamarinプラットフォーム入れました。</p>
-
-<h2 id="xamarin-への期待">xamarin への期待</h2>
-
+<h2 id="xamarin-">xamarin への期待</h2>
 <p>仕事でどうこうなどではないしMacもiOSもないので、やりたいことといったらAndroidアプリをC#で書けるということ。
 あとIS12TとかMADSMAとかなぜか持ってるので、こいつらをなんかしら活用するためにwindows phoneとかuwpとかのアプリも作りたいなと。</p>
-
-<h2 id="始める前に調べてみたもの">始める前に調べてみたもの</h2>
-
+<h2 id="heading1">始める前に調べてみたもの</h2>
 <p>WPFとかまあ多少いじったこともあるのでXAMLとかBindingあたりはまあいいかと思いつつ</p>
-
 <ul>
 <li>アーキテクチャっぽいところはMVVMが鉄板のよう</li>
 <li>Prism とか Unity とか使うと楽できる</li>
@@ -85,36 +71,25 @@ Macなんて持ってないのでWindowsでやってみます。</p>
 <li>Azure Mobile Appsに接続するライブラリとか認証までできるらしいのでクラウドにつなぐときはそこらへん使えばいいはず</li>
 <li>Nunit-lightとかテストツールも問題なさそう</li>
 </ul>
-
-<h2 id="やってみた">やってみた</h2>
-
+<h2 id="heading2">やってみた</h2>
 <p>とりあえずありがちなTodoリストアプリでもやってみよう。
 Prismとか導入前にいったん手作業でMVVMを組んでみる。</p>
-
 <p><code>System.ComponentModel.INotifyPropertyChanged</code> を実装して、プロパティのsetterで <code>PropertyChanged</code> イベントを発生させるとか、 <code>ObservableCollection</code> を使うのはかわってない。
 <code>ICommand</code> の実装が <code>Xamarin.Forms</code> に用意されてるのは便利。Prismにも用意されてるのかな。</p>
-
 <p><code>Loaded</code> イベントっぽいものが見つけられなかったので、 <code>DataContext</code> にVM渡すタイミングがわからず。ひとまずXamlの中でリソースとして作成する方法にした。</p>
-
 <p>実際触り始めたのが今日(2016/12/20)なので、データベースやネットワークまでは手が届かず。(´・ω・｀)
 時間をとってじっくり触ったのが半日だけ、UI以外のとこほとんどわからないままという状況に。</p>
-
-<h2 id="とりあえずやってみた感触">とりあえずやってみた感触</h2>
-
-<p>,(´<em>・ω・)</em> WPF触ったとき、こんなんだったよなーという感じで書いてみて動いたので変わらず使えるMVVMアーキテクチャにはほっとします。
+<h2 id="heading3">とりあえずやってみた感触</h2>
+<p>,(´_・ω・)_ WPF触ったとき、こんなんだったよなーという感じで書いてみて動いたので変わらず使えるMVVMアーキテクチャにはほっとします。
 ただ、xamarin.formsと周辺ライブラリのバージョンコンフリクトにはまり、二回ほどプロジェクト作り直したので、そういう状況になってからのうまい復旧方法を知っておきたいと思いました。
 （まあこの手の問題はどこでも同じだろうと思いますが）</p>
-
-<h2 id="やりたいこと">やりたいこと</h2>
-
+<h2 id="heading4">やりたいこと</h2>
 <p>,(´_・ω・)_　UI以外触らないといけないですよね。</p>
-
 <ul>
 <li>ローカルデータベース使う</li>
 <li>とりあえず Azure Mobile App と接続する</li>
 <li>Android Wearから音声入力など試したい</li>
 </ul>
-
 <p>明日 21日目は <a href="http://qiita.com/nia_tn1012">nia_tn1012</a>さんです。</p>
 
         

@@ -39,125 +39,79 @@
     <div class="container page-wrap">
     <div id="toc" class="well col-md-4 col-sm-6">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#linuxで-net-core">Linuxで .NET Core</a>
-<ul>
-<li><a href="#インストールするもの">インストールするもの</a></li>
-<li><a href="#インストール">インストール</a></li>
-<li><a href="#動作確認">動作確認</a></li>
-<li><a href="#asp-net-core-を動かす">ASP.NET Core を動かす</a></li>
-<li><a href="#まとめ">まとめ</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">インストールするもの</a></li>
+    <li><a href="#heading1">インストール</a></li>
+    <li><a href="#heading2">動作確認</a></li>
+    <li><a href="#aspnet-core-">ASP.NET Core を動かす</a></li>
+    <li><a href="#heading3">まとめ</a></li>
+  </ul>
 </nav>
     </div>
       <h1>dotnet on linux</h1>
       <small class="post-meta">Jul 5, 2016</small>
       <div class="post-content">
-        
-
-<h1 id="linuxで-net-core">Linuxで .NET Core</h1>
-
+        <h1 id="linux-net-core">Linuxで .NET Core</h1>
 <p>.NET Core が 1.0.0 リリースされたのでLinuxで使ってみます。
 とりあえずツールのインストールと ASP.NET Core を動かすまで。</p>
-
-<h2 id="インストールするもの">インストールするもの</h2>
-
+<h2 id="heading">インストールするもの</h2>
 <p>とりあえずの開発をするのに必要そうなツールも一緒にインストールします。</p>
-
 <ul>
 <li>.NET Core SDK</li>
 <li>Visual Studio Code
-
 <ul>
 <li>omnisharp</li>
-</ul></li>
+</ul>
+</li>
 <li>yo
-
 <ul>
 <li>aspnet-generator</li>
-</ul></li>
 </ul>
-
-<h2 id="インストール">インストール</h2>
-
+</li>
+</ul>
+<h2 id="heading1">インストール</h2>
 <p>最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。
 <a href="https://github.com/dotnet/dotnet-docker/blob/master/1.0.0/debian/core-deps/Dockerfile">Dockerfile</a> を参考に依存ライブラリをインストールしておきましょう。</p>
-
 <p>.NET Core は Ubuntuも正式サポートされているので、 <a href="https://www.microsoft.com/net/core#ubuntu">.NET Core のダウンロードページ</a>からインストールできます。
 リポジトリを追加してインストールするというppaな感じです。</p>
-
 <p><code>dotnet-dev-1.0.0-preview-2-***</code> とパッケージが複数存在しているので重複してインストールしてしまうとおかしな挙動になります。
 <a href="https://github.com/dotnet/cli/blob/rel/1.0.0/scripts/obtain/uninstall/dotnet-uninstall-debian-packages.sh">このあたりのスクリプト</a>を使って、きっちり他のバージョンをアンインストールするようにしましょう。</p>
-
 <p>Visual Studio Code も debパッケージが用意されています。
 <a href="https://code.visualstudio.com/Updates">リリースページ</a>から最新のdebをダウンロードしてインストールしましょう。
 また、Omnisharpを使ったC#用の拡張が用意されているので、 VS Code 内で <code>Extensions: Install Extension</code> を実行してインストールします。</p>
-
 <p>.NET Core の SDK のプロジェクトテンプレートは貧弱なので、 <code>yo</code> の <code>aspnet-generator</code> を用意しておきましょう。</p>
-
 <pre><code>$ sudo npm install yo aspnet-generator -g
-</code></pre>
-
-<p><a href="https://github.com/OmniSharp/generator-aspnet">aspnet-generator</a> には ASP.NET Core の開発に役立つテンプレートが数多く用意されています。</p>
-
-<h2 id="動作確認">動作確認</h2>
-
+</code></pre><p><a href="https://github.com/OmniSharp/generator-aspnet">aspnet-generator</a> には ASP.NET Core の開発に役立つテンプレートが数多く用意されています。</p>
+<h2 id="heading2">動作確認</h2>
 <p>.NET Core SDK では <code>dotnet</code> コマンドでビルドや実行、パッケージングなどを行います。</p>
-
 <p>とりあえず動作確認のためのディレクトリを作成します。</p>
-
 <pre><code>$ mkdir hwapp
 $ cd hwapp
-</code></pre>
-
-<p><code>dotnet new</code> で非常に簡単なプロジェクトを作成します。
+</code></pre><p><code>dotnet new</code> で非常に簡単なプロジェクトを作成します。
 <code>dotnet restore</code> で、依存ライブラリを初期化して、 <code>dotnet run</code> コマンドで実行します。</p>
-
 <pre><code>$ dotnet new
 $ dotnet restore
 $ dotnet run
-</code></pre>
-
-<p><code>dotnet run</code> コマンドは実行時にコンパイルが必要であれば事前にコンパイルしてからプログラムを実行します。</p>
-
+</code></pre><p><code>dotnet run</code> コマンドは実行時にコンパイルが必要であれば事前にコンパイルしてからプログラムを実行します。</p>
 <p>アセンブリを作成してから実行する場合は、 <code>dotnet build</code> コマンドを使ってアセンブリを作成し、 <code>dotnet</code> コマンドに直接アセンブリファイルを指定して実行します。</p>
-
 <pre><code>$ dotnet build
 $ dotnet run bin/Debug/hwapp.dll
 Hello, World!
-</code></pre>
-
-<p><code>.exe</code> ファイルは作らない方針なんでしょうかね？</p>
-
-<h2 id="asp-net-core-を動かす">ASP.NET Core を動かす</h2>
-
+</code></pre><p><code>.exe</code> ファイルは作らない方針なんでしょうかね？</p>
+<h2 id="aspnet-core-">ASP.NET Core を動かす</h2>
 <p>コマンドラインの動作を確認したら、 ASP.NET Core を動かしてみます。</p>
-
 <p><code>aspnet-generator</code> を使って、プロジェクトを作成します。</p>
-
 <pre><code>$ yo aspnet
 ? What type of application do you want to create? Empty Web Application
 ? What's the name of your ASP.NET application? Hello
-</code></pre>
-
-<p><code>dotnet new</code> はカレントディレクトリにファイルを展開しますが、 <code>yo</code> ではプロジェクトディレクトリが作られます。</p>
-
+</code></pre><p><code>dotnet new</code> はカレントディレクトリにファイルを展開しますが、 <code>yo</code> ではプロジェクトディレクトリが作られます。</p>
 <pre><code>$ cd Hello
 $ dotnet restore
-</code></pre>
-
-<p><code>dotnet restore</code> で必要なライブラリをインストールします。</p>
-
+</code></pre><p><code>dotnet restore</code> で必要なライブラリをインストールします。</p>
 <p>このまま <code>dotnet run</code> で webアプリケーションを起動します。</p>
-
 <pre><code>$ dotnet run
-</code></pre>
-
-<p>ブラウザで <code>http://localhost:5000</code> にアクセスすれば <code>Hello, world</code> が表示されます。</p>
-
-<h2 id="まとめ">まとめ</h2>
-
+</code></pre><p>ブラウザで <code>http://localhost:5000</code> にアクセスすれば <code>Hello, world</code> が表示されます。</p>
+<h2 id="heading3">まとめ</h2>
 <ul>
 <li>結構すんなり動く</li>
 </ul>

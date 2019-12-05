@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on aodag6</title>
@@ -6,10 +6,49 @@
     <description>Recent content in Posts on aodag6</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://aodag.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>アトマイザーのお手入れ</title>
+      <link>https://aodag.github.io/post/advent-2019/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://aodag.github.io/post/advent-2019/</guid>
+      <description>アドベントカレンダーのネタ。何を書こう。今年は引っ越ししたりイタリア行ったりなんか書くことはありそうな気はするが&amp;hellip;と悩みながらVAPE吸ってたらそろそろ焦げっぽいのでアトマイザーのお手入れをしないといけないので、その模様を書きます。
+VAPE 最近アメリカでフレーバーつきのリキッドについて規制やらなんやかんやあるVAPE界隈ですが、日本ではとりあえず規制などないようです。（もともとニコチンいりのリキッドは販売できないですが）
+まあ、それはともかくアトマイザーをお手入れしていきます。
+まずはVAPEの状態。アトマイザーはGalaxy MTL RTAで、modはeLeafのiStick PICO 21700です。
+お手入れの道具。 アトマイザーのコイルとウィックです。コイルはカンタルワイヤーで、コットンは無印のやつです。
+アトマイザーのチャンバーを外した図。ぐっしょぐしょです。
+アトマイザーはずしました。
+古いウィックを取り除きます。ハサミありますが切るまでもなくボロボロでした。
+コイルを外します。コゲコゲですね。
+アトマイザーもべとべとです。
+洗ってきました。
+新しいコイルを作ります。ワイヤーを適当な長さに切ります。 コイルを巻くのに、治具を使います。今回は3mmで巻きます。
+巻きました。
+アトマイザーをテスターにセットします。
+さっき巻いたコイルをセット。
+ワイヤーの余りをちょん切って、抵抗値を確認。とりあえず0.5Ω切ってなければいいかな。
+軽く火を入れながらコイルの形を整えたりなんだりします。
+ウィックを用意します。VAPE専用のやつも売ってるけど、無印で買った脱脂綿が大量に余ってるので、がんばって使います。
+4分割くらいの大きさに切って表面の固いところをはがします。
+そして伸ばす。
+端っこは伸ばしきれないので、ちぎります。
+丸める。
+そしてコイルの中に通します。
+長いので余計な部分をカット。
+リキッドがよく染みるように、ほぐしたり、梳いたり。
+そしてリキッドプールにウィックをつめます。
+わかりにくいですが、リキッドを湿らせてます。
+modにアトマイザーをのっけて キャップをしめて完了。
+2019年 そういえばこれは pyspa Advent Calendar 2019 の　5日目なのです。 今年のできごとをば。
+ 引っ越した 去年Plone Conferenceで英語ボロボロだったので、今年のイタリア開催に行きましたがやっぱりボロボロでした。  ということで2020年も、よろしくおねがいします。
+明日はgolden_luckyの番です。</description>
+    </item>
     
     <item>
       <title>作業中に聞く好きなギタリストのプレイリスト</title>
@@ -19,8 +58,8 @@
       <guid>https://aodag.github.io/post/advent-2018/</guid>
       <description>作業中に聞く音楽 みなさん作業中は音楽を聴くほうですか？ 私は作業に集中したいときは音楽を聴くほうです。日本語歌詞入りだとさすがに意識がそちらに行ってしまうので、インストか洋楽中心ですが。
 というわけでさくっとプレイリスト
- なんとなく好きなギタリストで1曲ずつ選んでみたプレイリストです。
- Andy Timmons Mike Stern Steve Morse Eric Johnson Steve Vai Randy Rhodes Chris Impellitteri Nuno Bettencourt  2018年 そういえばこれは pyspa Advent Calendar 2018 の　8日目なのです。 今年のできごとをば。
+なんとなく好きなギタリストで1曲ずつ選んでみたプレイリストです。
+ Andy Timmons Mike Stern Steve Morse Eric Johnson Steve Vai Randy Rhodes Chris Impellitteri Nuno Bettencourt  2018年 そういえばこれは pyspa Advent Calendar 2018 の　9日目なのです。 今年のできごとをば。
  今年はあまり変わったこともないな、引っ越しも転職もしてないし Plone Conferenceで英語ボロボロだったので、オンライン英会話を始めたところ  ということで2019年も、よろしくおねがいします。
 明日はikeの番です。</description>
     </item>
@@ -41,7 +80,7 @@ xamarin への期待 仕事でどうこうなどではないしMacもiOSもな�
 System.ComponentModel.INotifyPropertyChanged を実装して、プロパティのsetterで PropertyChanged イベントを発生させるとか、 ObservableCollection を使うのはかわってない。 ICommand の実装が Xamarin.Forms に用意されてるのは便利。Prismにも用意されてるのかな。
 Loaded イベントっぽいものが見つけられなかったので、 DataContext にVM渡すタイミングがわからず。ひとまずXamlの中でリソースとして作成する方法にした。
 実際触り始めたのが今日(2016/12/20)なので、データベースやネットワークまでは手が届かず。(´・ω・｀) 時間をとってじっくり触ったのが半日だけ、UI以外のとこほとんどわからないままという状況に。
-とりあえずやってみた感触 ,(´・ω・) WPF触ったとき、こんなんだったよなーという感じで書いてみて動いたので変わらず使えるMVVMアーキテクチャにはほっとします。 ただ、xamarin.formsと周辺ライブラリのバージョンコンフリクトにはまり、二回ほどプロジェクト作り直したので、そういう状況になってからのうまい復旧方法を知っておきたいと思いました。 （まあこの手の問題はどこでも同じだろうと思いますが）
+とりあえずやってみた感触 ,(´_・ω・)_ WPF触ったとき、こんなんだったよなーという感じで書いてみて動いたので変わらず使えるMVVMアーキテクチャにはほっとします。 ただ、xamarin.formsと周辺ライブラリのバージョンコンフリクトにはまり、二回ほどプロジェクト作り直したので、そういう状況になってからのうまい復旧方法を知っておきたいと思いました。 （まあこの手の問題はどこでも同じだろうと思いますが）
 やりたいこと ,(´_・ω・)_　UI以外触らないといけないですよね。
  ローカルデータベース使う とりあえず Azure Mobile App と接続する Android Wearから音声入力など試したい  明日 21日目は nia_tn1012さんです。</description>
     </item>
@@ -58,7 +97,7 @@ Loaded イベントっぽいものが見つけられなかったので、 DataCo
 抽出用のポット。軟水は濃くなりがちということでこちらで抽出したら茶葉をとりのぞいてさっきの白いほうにうつす。
 ティーカップとスプーン。ティーカップはティーポットと一緒にルシピアで購入。
 紅茶。家の近くのG-Crefで。アールグレイのFBOP。
-紅茶の等級 ,(´・ω・) G-Crefは農場単位でパックしてたりするセレクトティーショップだそうな。 同じ種類の葉でも何種類もおいてあるので、等級だけは読めるようになりました。
+紅茶の等級 ,(´_・ω・)_ G-Crefは農場単位でパックしてたりするセレクトティーショップだそうな。 同じ種類の葉でも何種類もおいてあるので、等級だけは読めるようになりました。
 だいたい長くなると高い等級らしいです。 SFTGFOPだと、スーパーフィナーティッピーゴールデンフラワリーオレンジペコーだとか。
 紅茶いれます だいたい1回で２杯分くらいいれます。 キャディースプーンでちょい盛り2杯の葉っぱを300mlでいれてミルクティーにします。
 お湯を注ぐ。勢い強めで。
@@ -84,8 +123,8 @@ MOONLIGHTと一緒にいただきます。
       <guid>https://aodag.github.io/post/aspnet-mvc-linux/</guid>
       <description>アドレス帳アプリケーションの作成 前回、とりあえず ASP.NET Core を Linux上で動かせたので、 ASP.NET Core MVC と EntityFramework Core を使って簡単な Web+DBアプリケーションを作成してみます。 あまり Linux 固有の話はありません。
 アドレス帳プロジェクトを作る generator-aspnet には、 ASP.NET Core Mvc 設定済のプロジェクトを生成するジェネレータも用意されていますが、学習のため Empty Web Application から初めていきます。
-$ yo aspnet ? What type of application do you want to create? Empty Web Application ? What&#39;s the name of your ASP.NET application? Addressbook $ cd Addressbook $ dotnet restore  プロジェクトを生成したら、そのディレクトリに移動して dotnet restore まで実行しておきます。
-MVCを使う準備 ASP.NET Core MVC を使うには、まず project.</description>
+$ yo aspnet ? What type of application do you want to create? Empty Web Application ? What&#39;s the name of your ASP.NET application? Addressbook $ cd Addressbook $ dotnet restore プロジェクトを生成したら、そのディレクトリに移動して dotnet restore まで実行しておきます。
+MVCを使う準備 ASP.NET Core MVC を使うには、まず project.json にライブラリを追加します。</description>
     </item>
     
     <item>
@@ -96,7 +135,7 @@ MVCを使う準備 ASP.NET Core MVC を使うには、まず project.</descripti
       <guid>https://aodag.github.io/post/dotnet-on-linux/</guid>
       <description>Linuxで .NET Core .NET Core が 1.0.0 リリースされたのでLinuxで使ってみます。 とりあえずツールのインストールと ASP.NET Core を動かすまで。
 インストールするもの とりあえずの開発をするのに必要そうなツールも一緒にインストールします。
- .NET Core SDK Visual Studio Code  omnisharp  yo  aspnet-generator   インストール 最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。 Dockerfile を参考に依存ライブラリをインストールしておきましょう。
+ .NET Core SDK Visual Studio Code  omnisharp   yo  aspnet-generator    インストール 最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。 Dockerfile を参考に依存ライブラリをインストールしておきましょう。
 .NET Core は Ubuntuも正式サポートされているので、 .NET Core のダウンロードページからインストールできます。 リポジトリを追加してインストールするというppaな感じです。
 dotnet-dev-1.0.0-preview-2-*** とパッケージが複数存在しているので重複してインストールしてしまうとおかしな挙動になります。 このあたりのスクリプトを使って、きっちり他のバージョンをアンインストールするようにしましょう。
 Visual Studio Code も debパッケージが用意されています。 リリースページから最新のdebをダウンロードしてインストールしましょう。 また、Omnisharpを使ったC#用の拡張が用意されているので、 VS Code 内で Extensions: Install Extension を実行してインストールします。
@@ -109,7 +148,7 @@ Visual Studio Code も debパッケージが用意されています。 リリ�
       <pubDate>Wed, 30 Dec 2015 21:34:41 +0900</pubDate>
       
       <guid>https://aodag.github.io/post/first/</guid>
-      <description> これまでのブログ  はてな Blogger PostHaven Pelican qiita  </description>
+      <description>これまでのブログ  はてな Blogger PostHaven Pelican qiita  </description>
     </item>
     
   </channel>

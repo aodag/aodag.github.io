@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on aodag6</title>
+    <title>linux on aodag6</title>
     <link>https://aodag.github.io/categories/linux/</link>
-    <description>Recent content in Linux on aodag6</description>
+    <description>Recent content in linux on aodag6</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 Jul 2016 00:09:14 +0900</lastBuildDate>
@@ -19,7 +19,7 @@
       <guid>https://aodag.github.io/post/dotnet-on-linux/</guid>
       <description>Linuxで .NET Core .NET Core が 1.0.0 リリースされたのでLinuxで使ってみます。 とりあえずツールのインストールと ASP.NET Core を動かすまで。
 インストールするもの とりあえずの開発をするのに必要そうなツールも一緒にインストールします。
- .NET Core SDK Visual Studio Code  omnisharp  yo  aspnet-generator   インストール 最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。 Dockerfile を参考に依存ライブラリをインストールしておきましょう。
+ .NET Core SDK Visual Studio Code  omnisharp   yo  aspnet-generator    インストール 最初に、 .NET Core を動かすために必要なライブラリをインストールしておきます。 Dockerfile を参考に依存ライブラリをインストールしておきましょう。
 .NET Core は Ubuntuも正式サポートされているので、 .NET Core のダウンロードページからインストールできます。 リポジトリを追加してインストールするというppaな感じです。
 dotnet-dev-1.0.0-preview-2-*** とパッケージが複数存在しているので重複してインストールしてしまうとおかしな挙動になります。 このあたりのスクリプトを使って、きっちり他のバージョンをアンインストールするようにしましょう。
 Visual Studio Code も debパッケージが用意されています。 リリースページから最新のdebをダウンロードしてインストールしましょう。 また、Omnisharpを使ったC#用の拡張が用意されているので、 VS Code 内で Extensions: Install Extension を実行してインストールします。

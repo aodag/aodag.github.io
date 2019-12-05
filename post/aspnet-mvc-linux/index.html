@@ -39,89 +39,62 @@
     <div class="container page-wrap">
     <div id="toc" class="well col-md-4 col-sm-6">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#アドレス帳アプリケーションの作成">アドレス帳アプリケーションの作成</a>
-<ul>
-<li><a href="#アドレス帳プロジェクトを作る">アドレス帳プロジェクトを作る</a></li>
-<li><a href="#mvcを使う準備">MVCを使う準備</a></li>
-<li><a href="#webアプリケーションでmvcを有効にする">WebアプリケーションでMVCを有効にする</a></li>
-<li><a href="#controllerを追加する">Controllerを追加する</a></li>
-<li><a href="#modelを定義する">Modelを定義する</a></li>
-<li><a href="#modelにアトリビュートをつける">Modelにアトリビュートをつける</a></li>
-<li><a href="#view">View</a></li>
-<li><a href="#モデルとフォーム">モデルとフォーム</a></li>
-<li><a href="#taghelperを使ってリンクを作る">TagHelperを使ってリンクを作る</a></li>
-<li><a href="#entityframework-core-とツールをインストールする">EntityFramework Core とツールをインストールする</a></li>
-<li><a href="#entityframework-core-でモデルを永続化する">EntityFramework Core でモデルを永続化する</a></li>
-<li><a href="#データベース接続設定">データベース接続設定</a></li>
-<li><a href="#migrationする">Migrationする</a></li>
-<li><a href="#controllerにdbcontextをインジェクションする">ControllerにDbContextをインジェクションする</a></li>
-<li><a href="#フォーム処理">フォーム処理</a></li>
-<li><a href="#モデルを永続化する処理">モデルを永続化する処理</a></li>
-<li><a href="#残りのcrudアクションを実装する">残りのCRUDアクションを実装する</a></li>
-<li><a href="#viewをまとめる">Viewをまとめる</a></li>
-</ul></li>
-<li><a href="#まとめ">まとめ</a></li>
-</ul>
+  <ul>
+    <li><a href="#heading1">アドレス帳プロジェクトを作る</a></li>
+    <li><a href="#mvc">MVCを使う準備</a></li>
+    <li><a href="#webmvc">WebアプリケーションでMVCを有効にする</a></li>
+    <li><a href="#controller">Controllerを追加する</a></li>
+    <li><a href="#model">Modelを定義する</a></li>
+    <li><a href="#model1">Modelにアトリビュートをつける</a></li>
+    <li><a href="#view">View</a></li>
+    <li><a href="#heading2">モデルとフォーム</a></li>
+    <li><a href="#taghelper">TagHelperを使ってリンクを作る</a></li>
+    <li><a href="#entityframework-core-">EntityFramework Core とツールをインストールする</a></li>
+    <li><a href="#entityframework-core-1">EntityFramework Core でモデルを永続化する</a></li>
+    <li><a href="#heading3">データベース接続設定</a></li>
+    <li><a href="#migration">Migrationする</a></li>
+    <li><a href="#controllerdbcontext">ControllerにDbContextをインジェクションする</a></li>
+    <li><a href="#heading4">フォーム処理</a></li>
+    <li><a href="#heading5">モデルを永続化する処理</a></li>
+    <li><a href="#crud">残りのCRUDアクションを実装する</a></li>
+    <li><a href="#view1">Viewをまとめる</a></li>
+  </ul>
 </nav>
     </div>
       <h1>ASP.NET Core MVC を Linuxで使ってみよう</h1>
       <small class="post-meta">Aug 11, 2016</small>
       <div class="post-content">
-        
-
-<h1 id="アドレス帳アプリケーションの作成">アドレス帳アプリケーションの作成</h1>
-
+        <h1 id="heading">アドレス帳アプリケーションの作成</h1>
 <p>前回、とりあえず ASP.NET Core を Linux上で動かせたので、 ASP.NET Core MVC と EntityFramework Core を使って簡単な Web+DBアプリケーションを作成してみます。
 あまり Linux 固有の話はありません。</p>
-
-<h2 id="アドレス帳プロジェクトを作る">アドレス帳プロジェクトを作る</h2>
-
+<h2 id="heading1">アドレス帳プロジェクトを作る</h2>
 <p><code>generator-aspnet</code> には、 ASP.NET Core Mvc 設定済のプロジェクトを生成するジェネレータも用意されていますが、学習のため Empty Web Application から初めていきます。</p>
-
 <pre><code>$ yo aspnet
 ? What type of application do you want to create? Empty Web Application
 ? What's the name of your ASP.NET application? Addressbook
 $ cd Addressbook
 $ dotnet restore
-</code></pre>
-
-<p>プロジェクトを生成したら、そのディレクトリに移動して <code>dotnet restore</code> まで実行しておきます。</p>
-
-<h2 id="mvcを使う準備">MVCを使う準備</h2>
-
+</code></pre><p>プロジェクトを生成したら、そのディレクトリに移動して <code>dotnet restore</code> まで実行しておきます。</p>
+<h2 id="mvc">MVCを使う準備</h2>
 <p>ASP.NET Core MVC を使うには、まず <code>project.json</code> にライブラリを追加します。</p>
-
 <pre><code>dependencies: {
     ...
     &quot;Microsoft.AspNetCore.Mvc&quot;: &quot;1.0.0&quot;
 }
-</code></pre>
-
-<p>追加したら、 <code>dotnet restore</code> でライブラリをインストールします。</p>
-
+</code></pre><p>追加したら、 <code>dotnet restore</code> でライブラリをインストールします。</p>
 <pre><code>$ dotnet restore
-</code></pre>
-
-<p>VS Code を利用している場合は、 <code>dotnet: Restore Packages</code> を実行すればよいでしょう。</p>
-
-<h2 id="webアプリケーションでmvcを有効にする">WebアプリケーションでMVCを有効にする</h2>
-
+</code></pre><p>VS Code を利用している場合は、 <code>dotnet: Restore Packages</code> を実行すればよいでしょう。</p>
+<h2 id="webmvc">WebアプリケーションでMVCを有効にする</h2>
 <p>ライブラリがインストールできたら、アプリケーションの <code>Startup</code> クラス内で ASP.NET Core MVC を有効にします。</p>
-
 <pre><code>        public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
         }
 
-</code></pre>
-
-<p><code>ConfigureServices</code> メソッド内で、 <code>services</code> の <code>AddMvc</code> メソッドを実行します。
+</code></pre><p><code>ConfigureServices</code> メソッド内で、 <code>services</code> の <code>AddMvc</code> メソッドを実行します。
 <code>AddMvc</code> メソッドは <code>IserviceCollection</code> への拡張メソッドで、 <code>Microsoft.AspNetCore.Mvc</code> をインストールすると使えるようになります。</p>
-
 <p>さらにルーティングの設定も行います。
 今回はとりあえずデフォルトのルーティングを利用します。</p>
-
 <pre><code>        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole();
@@ -132,38 +105,25 @@ $ dotnet restore
             }
             app.UseMvcWithDefaultRoute();
         }
-</code></pre>
-
-<p><code>Emptty Web Application</code> では <code>Run</code> メソッドになっていた部分を <code>UseMvcWithDefaultRoute</code> の呼び出しに変更します。
+</code></pre><p><code>Emptty Web Application</code> では <code>Run</code> メソッドになっていた部分を <code>UseMvcWithDefaultRoute</code> の呼び出しに変更します。
 これは <code>{controller}/{action}/{id?}</code> というルーティングを設定するメソッドです。</p>
-
-<h2 id="controllerを追加する">Controllerを追加する</h2>
-
+<h2 id="controller">Controllerを追加する</h2>
 <p>ルーティングができたのでその先で実際に処理を行うコントローラーを追加します。
 コントローラークラスの追加も <code>generator-aspnet</code> のサブジェネレータが用意されてるので、それを利用することにします。</p>
-
 <pre><code>$ mkdir Controllers
 $ mkdir Views
 $ yo aspnet:MvcController HomeController
 $ yo aspnet:MvcView Home/Index.cs
-</code></pre>
-
-<p>コントローラーを追加すると、空の <code>Index</code> メソッドだけ用意されてるので、対応するビューのファイルも生成しています。
+</code></pre><p>コントローラーを追加すると、空の <code>Index</code> メソッドだけ用意されてるので、対応するビューのファイルも生成しています。
 ビューの中身はなにもないので、単にエラーにならないだけの真っ白なページを表示できます。</p>
-
-<h2 id="modelを定義する">Modelを定義する</h2>
-
+<h2 id="model">Modelを定義する</h2>
 <p>アドレス帳の中身を作成していきます。
 アドレス帳にのせる人物を <code>Person</code> クラスで実装しましょう。
 <code>Models</code> ディレクトリ以下に <code>aspnet:Class</code> ジェネレータを使って単純なクラスを生成します。</p>
-
 <pre><code>$ mkdir Models
 $ cd Models
 $ yo aspnet:Class Person
-</code></pre>
-
-<p><code>Person</code> クラスにいくつかのプロパティを実装します。</p>
-
+</code></pre><p><code>Person</code> クラスにいくつかのプロパティを実装します。</p>
 <pre><code>namespace Addressbook.Models
 {
     public class Person
@@ -199,17 +159,12 @@ $ yo aspnet:Class Person
     }
 }
 
-</code></pre>
-
-<p><code>FullName</code> プロパティは <code>FirstName</code>, <code>LastName</code> から算出するプロパティです。
+</code></pre><p><code>FullName</code> プロパティは <code>FirstName</code>, <code>LastName</code> から算出するプロパティです。
 またこのあとデータベースに保存するので、 <code>Id</code> プロパティも実装しておきます。</p>
-
-<h2 id="modelにアトリビュートをつける">Modelにアトリビュートをつける</h2>
-
+<h2 id="model1">Modelにアトリビュートをつける</h2>
 <p>モデルクラスにアトリビュートをつけてプロパティの扱いを指定します。
 <code>FullName</code> プロパティは算出されるものなので、データベースに保存しないように <code>NotMappedAttribute</code> を指定します。
 <code>Email</code> プロパティは <code>EmailAddressAttribute</code> をつけて単なる文字列ではなくメールアドレスを持つプロパティであることを明示しておきます。</p>
-
 <pre><code>using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -242,17 +197,11 @@ using System.ComponentModel.DataAnnotations.Schema;
         }
 
 ...
-</code></pre>
-
-<p>これらのアトリビュートは、　<code>System.ComponentModel.Annotations</code> ライブラリの <code>System.ComponentModel.DataAnnotations</code> 名前空間や <code>System.ComponentModel.DataAnnotations.Schema</code> 名前空間に含まれています。</p>
-
+</code></pre><p>これらのアトリビュートは、　<code>System.ComponentModel.Annotations</code> ライブラリの <code>System.ComponentModel.DataAnnotations</code> 名前空間や <code>System.ComponentModel.DataAnnotations.Schema</code> 名前空間に含まれています。</p>
 <h2 id="view">View</h2>
-
 <p>モデルオブジェクトを作成してビューに表示してみます。
 とりあえずデータベースのことは忘れて、アクションメソッドの中でインスタンスを生成してビューに渡すようにします。</p>
-
 <p><code>HomeController</code> の <code>Index</code> メソッドの中で <code>Person</code> の配列を作成してみます。</p>
-
 <pre><code>         public IActionResult Index()
          {
             var people = Enumerable.Range(0, 10)
@@ -265,13 +214,9 @@ using System.ComponentModel.DataAnnotations.Schema;
             return View(people);
          }
 
-</code></pre>
-
-<p>Linq を使って10個の <code>Person</code> 要素を持つ配列 <code>people</code> を作成しています。
+</code></pre><p>Linq を使って10個の <code>Person</code> 要素を持つ配列 <code>people</code> を作成しています。
 この <code>people</code> をそのまま <code>View</code> メソッドの引数に渡すと、ビューのテンプレート内で <code>Model</code> として参照できます。</p>
-
 <p>配列を渡しているので <code>Home/Index.cshtml</code> の中ではループして、それぞれの要素を表示します。</p>
-
 <pre><code>&lt;table&gt;
     &lt;tr&gt;
         &lt;th&gt;FullName&lt;/th&gt;
@@ -285,32 +230,20 @@ using System.ComponentModel.DataAnnotations.Schema;
     &lt;/tr&gt;
 }
 +&lt;/table&gt;
-</code></pre>
-
-<p><code>@foreach</code> を使って配列をループ処理します。
+</code></pre><p><code>@foreach</code> を使って配列をループ処理します。
 また、変数の参照は <code>@</code> の後に変数名を書くとその値を評価した結果が表示されます。</p>
-
-<h2 id="モデルとフォーム">モデルとフォーム</h2>
-
+<h2 id="heading2">モデルとフォーム</h2>
 <p>新規作成や編集フォームのビューも作ってみましょう。
 それぞれ、 <code>New</code>, <code>Edit</code> アクションとして実装してみます。</p>
-
 <p><code>HomeController</code> に <code>New</code> メソッドを追加します。</p>
-
 <pre><code>        public IActionResult New()
         {
             return View();
         }
 
-</code></pre>
-
-<p>対応するビューを <code>Home/New.cshtml</code> に作成します。</p>
-
+</code></pre><p>対応するビューを <code>Home/New.cshtml</code> に作成します。</p>
 <pre><code>$ yo aspnet:MvcView Home/New.cshtml
-</code></pre>
-
-<p><code>New.cshtml</code> にフォームを作成します。</p>
-
+</code></pre><p><code>New.cshtml</code> にフォームを作成します。</p>
 <pre><code>@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model Addressbook.Models.Person
 @{
@@ -331,17 +264,12 @@ using System.ComponentModel.DataAnnotations.Schema;
     &lt;/div&gt;
 &lt;/form&gt;
 
-</code></pre>
-
-<p>フォームのフィールドで <code>asp-for</code> という属性を指定しています。
+</code></pre><p>フォームのフィールドで <code>asp-for</code> という属性を指定しています。
 これはタグヘルパーという機能です。
 使いたいタグヘルパーを <code>@AddTagHelper</code> で指定します。
 また、モデルのクラスを <code>@model</code> で指定します。</p>
-
 <p>フォームの中の <code>input</code> や <code>label</code> には <code>asp-for</code> タグヘルパーでプロパティを指定します。</p>
-
 <p>同様に編集用のフォームを <code>Edit</code> アクションに作成します。</p>
-
 <pre><code>        public IActionResult Edit(int id)
         {
             var person = new Models.Person() {
@@ -353,15 +281,10 @@ using System.ComponentModel.DataAnnotations.Schema;
             return View(person);
         }
 
-</code></pre>
-
-<p><code>Edit</code> メソッドでは、編集対象のオブジェクトをビューにモデルとして渡すようにしています。
+</code></pre><p><code>Edit</code> メソッドでは、編集対象のオブジェクトをビューにモデルとして渡すようにしています。
 ここでは、仮の内容で <code>Person</code> クラスのインスタンスを作成しています。</p>
-
-<h2 id="taghelperを使ってリンクを作る">TagHelperを使ってリンクを作る</h2>
-
+<h2 id="taghelper">TagHelperを使ってリンクを作る</h2>
 <p>それぞれのフォームへのリンクを追加します。</p>
-
 <pre><code>&lt;a asp-action=&quot;new&quot;&gt;New&lt;/a&gt;
 &lt;table&gt;
     &lt;tr&gt;
@@ -378,52 +301,33 @@ using System.ComponentModel.DataAnnotations.Schema;
     &lt;/tr&gt;
 }
 &lt;/table&gt;
-</code></pre>
-
-<p>フォームへのリンクも <code>TagHelpers</code> を利用します。
+</code></pre><p>フォームへのリンクも <code>TagHelpers</code> を利用します。
 <code>asp-action</code> でアクション名を指定し、 <code>asp-route-id</code> でルートURL内の <code>id</code> パラメータに値を渡します。
 現在のコントローラーと別のコントローラーへのリンクを作成する場合は <code>asp-controller</code> でコントローラー名を指定しますが、今回は同じ <code>HomeController</code> のアクションを利用するため指定しません。</p>
-
 <p>デフォルトのルート設定は <code>{controller}/{action}/{id?}</code> となっているため、 <code>id</code> が <code>1</code> の場合では <code>home/edit/1</code> というURLへのリンクが生成されます。</p>
-
-<h2 id="entityframework-core-とツールをインストールする">EntityFramework Core とツールをインストールする</h2>
-
+<h2 id="entityframework-core-">EntityFramework Core とツールをインストールする</h2>
 <p>モデルを永続化するために <code>EntityFramework Core</code> を利用します。</p>
-
 <p><code>EntityFramework Core</code> を依存ライブラリに追加します。</p>
-
 <pre><code>dependencies: {
     ...
     &quot;Microsoft.EntityFrameworkCore&quot;: &quot;1.0.0&quot;,
     &quot;Microsoft.EntityFrameworkCore.Sqlite&quot;: &quot;1.0.0&quot;
 }
-</code></pre>
-
-<p>今回はデータベースに <a href="http://sqlite.org">Sqlite</a> を使うことにします。</p>
-
+</code></pre><p>今回はデータベースに <a href="http://sqlite.org">Sqlite</a> を使うことにします。</p>
 <p>また、スキーママイグレーションをするために <code>EntityFramework Core Tools</code> をインストールします。
 <code>EntityFramework Core Tools</code> は <code>project.json</code> の <code>tools</code> セクションに追加します。</p>
-
 <pre><code>  &quot;tools&quot;: {
     ...
     &quot;Microsoft.EntityFrameworkCore.Tools&quot;: &quot;1.0.0-preview2-final&quot;
   },
-</code></pre>
-
-<p><code>EntityFramework Core Tools</code> に必要な <code>EntityFramework Core Design</code> を依存ライブラリに追加します。</p>
-
+</code></pre><p><code>EntityFramework Core Tools</code> に必要な <code>EntityFramework Core Design</code> を依存ライブラリに追加します。</p>
 <pre><code>dependencies: {
     ...
     &quot;Microsoft.EntityFrameworkCore.Design&quot;: &quot;1.0.0-preview2-final&quot;
 }
-</code></pre>
-
-<p><code>project.json</code> にライブラリを追加したら、 <code>dotnet restore</code> でライブラリをインストールします。</p>
-
-<h2 id="entityframework-core-でモデルを永続化する">EntityFramework Core でモデルを永続化する</h2>
-
+</code></pre><p><code>project.json</code> にライブラリを追加したら、 <code>dotnet restore</code> でライブラリをインストールします。</p>
+<h2 id="entityframework-core-1">EntityFramework Core でモデルを永続化する</h2>
 <p><code>DbContext</code> を継承して <code>ApplicationDbContext</code> を作成します。</p>
-
 <pre><code>using Microsoft.EntityFrameworkCore;
 
 namespace Addressbook.Data
@@ -438,33 +342,22 @@ namespace Addressbook.Data
 
     }
 }
-</code></pre>
-
-<p><code>ApplicationDbContext</code> のコンストラクタは <code>DbContextOptions</code> を受け取るようにします。
+</code></pre><p><code>ApplicationDbContext</code> のコンストラクタは <code>DbContextOptions</code> を受け取るようにします。
 この値はスーパークラスの <code>DbContext</code> のコンストラクタにそのまま渡すようにします。</p>
-
 <p><code>ApplicationDbContext</code> クラスに、永続化したいクラスの <code>DbSet</code> をプロパティで定義します。</p>
-
 <pre><code>        public DbSet&lt;Models.Person&gt; People
         {
             get;
             set;
         }
-</code></pre>
-
-<h2 id="データベース接続設定">データベース接続設定</h2>
-
+</code></pre><h2 id="heading3">データベース接続設定</h2>
 <p><code>appsettings.json</code> を作成して、データベース接続を設定します。</p>
-
 <pre><code>{
     &quot;ConnectionStrings&quot;: {
         &quot;DefaultConnection&quot;: &quot;DataSource = addressbook.sqlite&quot;
     }
 }
-</code></pre>
-
-<p><code>Startup</code> クラスのコンストラクタで、 <code>appsettings.json</code> などから設定を読み込む処理を追加します。</p>
-
+</code></pre><p><code>Startup</code> クラスのコンストラクタで、 <code>appsettings.json</code> などから設定を読み込む処理を追加します。</p>
 <pre><code>using Microsoft.Extensions.Configuration;
 using System.IO;
 
@@ -486,41 +379,24 @@ using System.IO;
             Configuration = builder.Build();
         }
 ...
-</code></pre>
-
-<p><code>ApplicationDbContext</code> を <code>ConfigureServices</code> 中で　<code>services</code> に追加します。</p>
-
+</code></pre><p><code>ApplicationDbContext</code> を <code>ConfigureServices</code> 中で　<code>services</code> に追加します。</p>
 <pre><code>            services.AddDbContext&lt;Data.ApplicationDbContext&gt;(options =&gt; {
                 options.UseSqlite(Configuration.GetConnectionString(&quot;DefaultConnection&quot;));
             });
         }
-</code></pre>
-
-<p>ここで設定した <code>options</code> が <code>ApplicationDbContext</code> クラスのコンストラクタに渡されます。</p>
-
-<h2 id="migrationする">Migrationする</h2>
-
+</code></pre><p>ここで設定した <code>options</code> が <code>ApplicationDbContext</code> クラスのコンストラクタに渡されます。</p>
+<h2 id="migration">Migrationする</h2>
 <p><code>ApplicationDbContext</code> に <code>Person</code> 用の <code>DbSet</code> プロパティを追加したので、 <code>EntityFramework Core Tools</code> を使ってテーブルを作成します。</p>
-
 <p><code>EntityFramework Core Tools</code> の機能は <code>dotnet</code> コマンドの <code>ef</code> サブコマンドから利用できます。</p>
-
 <p>試しに、 <code>ApplicationDbContext</code> がアプリケーション内のDbContextとして認識されているのか確認してみましょう。</p>
-
 <pre><code>$ dotnet ef dbcontext list
 Project Addressbook (.NETCoreApp,Version=v1.0) was previously compiled. Skipping compilation.
 Addressbook.Data.ApplicationDbContext
-</code></pre>
-
-<p>それではデータベースにスキーママイグレーションを実行してテーブルを作成してみます。</p>
-
+</code></pre><p>それではデータベースにスキーママイグレーションを実行してテーブルを作成してみます。</p>
 <pre><code>$ dotnet ef migrations add FirstModel
 $ dotnet ef database update
-</code></pre>
-
-<p>実行すると、 <code>bin/Debug/netcoreapp1.0</code> に <code>addressbook.sqlite</code> ファイルが作成されます。</p>
-
+</code></pre><p>実行すると、 <code>bin/Debug/netcoreapp1.0</code> に <code>addressbook.sqlite</code> ファイルが作成されます。</p>
 <p>sqlite3コマンドでデータベースファイルの中身を確認してみましょう。</p>
-
 <pre><code>$ sqlite3 bin/Debug/netcoreapp1.0/addressbook.sqlite 
 sqlite&gt; .schema
 CREATE TABLE &quot;__EFMigrationsHistory&quot; (
@@ -533,40 +409,27 @@ CREATE TABLE &quot;People&quot; (
     &quot;FirstName&quot; TEXT NOT NULL,
     &quot;LastName&quot; TEXT NOT NULL
 );
-</code></pre>
-
-<p><code>Person</code> クラスのテーブルとして <code>People</code> テーブルが作成されています。
+</code></pre><p><code>Person</code> クラスのテーブルとして <code>People</code> テーブルが作成されています。
 また、マイグレーションのバージョンを管理するためのテーブル <code>__EFMigrationsHistory</code> テーブルも作成されます。</p>
-
-<h2 id="controllerにdbcontextをインジェクションする">ControllerにDbContextをインジェクションする</h2>
-
+<h2 id="controllerdbcontext">ControllerにDbContextをインジェクションする</h2>
 <p><code>ApplicationDbContext</code> をコントローラーから扱うには、DependencyInjectionに登録されたオブジェクトをコンストラクタで受け取るようにします。
 単にコントローラークラスのメソッド内で <code>ApplicationDbContext</code> クラスのインスタンスを作成してもデータベース接続が設定されていない状態のものになってしまいます。</p>
-
-<h2 id="フォーム処理">フォーム処理</h2>
-
+<h2 id="heading4">フォーム処理</h2>
 <p>コントローラーでフォームの値を受け取って処理するようにしていきます。</p>
-
 <p><code>New</code> アクションのフォームから値を受け取り、アドレス帳に新規追加する <code>Create</code> アクションを <code>HomeController</code> のメソッドとして実装してみます。</p>
-
 <p>フォームの内容はメソッドの引数として受け取ります。
 引数に <code>Bind</code> アトリビュートを追加してどの値を受け取るのか指定します。
 例えば、 <code>New</code> アクションから受け取るフォームの内容は以下のようにして <code>Person</code> クラスのインスタンスに割り当てます。</p>
-
 <pre><code>        [HttpPost]
         public IActionResult Create([Bind(&quot;FirstName,LastName,Email&quot;)]Models.Person person)
         {
             ...
         }
-</code></pre>
-
-<p><code>POST</code> メソッド以外でフォームの値を受け取らないように <code>HttpPost</code> アトリビュートをメソッド自体に設定しています。
+</code></pre><p><code>POST</code> メソッド以外でフォームの値を受け取らないように <code>HttpPost</code> アトリビュートをメソッド自体に設定しています。
 引数の <code>person</code> は <code>Person</code> クラスのインスタンスです。
 <code>Bind</code> アトリビュートを使って <code>FirstName</code>, <code>LastName</code>, <code>Email</code> の値を <code>person</code> の各プロパティに割り当てています。</p>
-
 <p>また、 <code>Person</code> クラスのプロパティにはそれぞれ <code>Required</code> アトリビュートや <code>EmailAddress</code> アトリビュートを追加しています。
 これらのプロパティにしたがって、フォームの入力値が正しい形式になっているのか確認するには <code>ModelState</code> の <code>IsValid</code> プロパティを利用します。</p>
-
 <pre><code>        [HttpPost]
         public IActionResult Create([Bind(&quot;FirstName,LastName,Email&quot;)]Models.Person person)
         {
@@ -574,14 +437,9 @@ CREATE TABLE &quot;People&quot; (
                 return View(&quot;New&quot;, person);
             }
         }
-</code></pre>
-
-<p><code>IsValid</code> が <code>false</code> となる場合は、再びフォームを表示するため <code>New</code> ビューを呼び出して処理を中断するようにします。</p>
-
-<h2 id="モデルを永続化する処理">モデルを永続化する処理</h2>
-
+</code></pre><p><code>IsValid</code> が <code>false</code> となる場合は、再びフォームを表示するため <code>New</code> ビューを呼び出して処理を中断するようにします。</p>
+<h2 id="heading5">モデルを永続化する処理</h2>
 <p>受け取った <code>person</code> オブジェクトをデータベースに保存するには <code>DbContext</code> の <code>Add</code> メソッドで追加した後に <code>SaveChanges</code> メソッドでデータベースに反映します。</p>
-
 <pre><code>        [HttpPost]
         public IActionResult Create([Bind(&quot;FirstName,LastName,Email&quot;)]Models.Person person)
         {
@@ -592,17 +450,11 @@ CREATE TABLE &quot;People&quot; (
             DbContext.SaveChanges();
             return RedirectToAction(&quot;Index&quot;);
         }
-</code></pre>
-
-<p><code>IsValid</code> の確認後に <code>DbContext.Add</code> と <code>DbContext.SaveChanges</code> を呼び出します。
+</code></pre><p><code>IsValid</code> の確認後に <code>DbContext.Add</code> と <code>DbContext.SaveChanges</code> を呼び出します。
 保存処理が終わったら、 <code>RedirectToAction</code> メソッドで <code>Index</code> アクションにリダイレクトして一覧を表示させます。</p>
-
-<h2 id="残りのcrudアクションを実装する">残りのCRUDアクションを実装する</h2>
-
+<h2 id="crud">残りのCRUDアクションを実装する</h2>
 <p>新規追加のアクションができあがったので残りのアクションも <code>EntityFramework Core</code> を使った処理で実装していきます。</p>
-
 <p>一覧表示をする <code>Index</code> は <code>DbContext</code> の <code>People</code> プロパティを使って、保存されている <code>Person</code> オブジェクトの配列を取得するように変更します。</p>
-
 <pre><code>using System.Linq;
 
 ...
@@ -613,14 +465,10 @@ CREATE TABLE &quot;People&quot; (
             var people = DbContext.People.ToArray();
             return View(people);
         }
-</code></pre>
-
-<p><code>Person</code> は <code>IEnumerable</code> を実装しているため、 <code>System.Linq</code> 名前空間を追加しておくと <code>ToArray</code> メソッドで配列を取得できるようになります。</p>
-
+</code></pre><p><code>Person</code> は <code>IEnumerable</code> を実装しているため、 <code>System.Linq</code> 名前空間を追加しておくと <code>ToArray</code> メソッドで配列を取得できるようになります。</p>
 <p><code>Update</code> アクションは <code>Create</code> と同様に <code>Person</code> クラスのオブジェクトでフォームの値を受け取るようにします。
 <code>Create</code> アクションとは異なり、 URLパターンの中に更新対象を示す <code>id</code>　パラメータがあります。
 この値も <code>person</code> のプロパティとして受け取るために <code>Bind</code> アトリビュートで <code>Id</code> を追加します。</p>
-
 <pre><code>
         [HttpPost]
         public IActionResult Update(int id, [Bind(&quot;Id,FirstName,LastName,Email&quot;)]Models.Person data)
@@ -640,18 +488,12 @@ CREATE TABLE &quot;People&quot; (
             DbContext.SaveChanges();
             return RedirectToAction(&quot;Index&quot;);            
         }
-</code></pre>
-
-<p><code>Update</code> 内では更新対象を <code>FirstOrDefault</code> メソッドで取得します。
+</code></pre><p><code>Update</code> 内では更新対象を <code>FirstOrDefault</code> メソッドで取得します。
 存在しない場合は <code>NotFound</code> メソッドでステータスコードが <code>404</code> のレスポンスを返して処理を終了します。</p>
-
 <p>取得したオブジェクトのプロパティに、フォームの値を代入したら、 <code>DbContext</code> の <code>SaveChanges</code> メソッドでデータベースに反映します。
 <code>DbContext</code> から取得したオブジェクトは <code>DbContext</code> が状態を追跡しているため、 <code>Add</code> メソッドを呼び出す必要はありません。</p>
-
 <p>処理が完了したら <code>Create</code> アクションと同様に <code>Index</code> アクションにリダイレクトして一覧を表示します。</p>
-
 <p>最後に <code>Delete</code> アクションです。</p>
-
 <pre><code>        [HttpPost]
         public IActionResult Delete(int id)
         {
@@ -664,23 +506,16 @@ CREATE TABLE &quot;People&quot; (
             DbContext.SaveChanges();
             return RedirectToAction(&quot;Index&quot;);                        
         }
-</code></pre>
-
-<p>モデルをデータベースから削除するには <code>DbContext</code> の <code>Remove</code> メソッドを利用します。
+</code></pre><p>モデルをデータベースから削除するには <code>DbContext</code> の <code>Remove</code> メソッドを利用します。
 まずは <code>id</code> で対象のモデルを取得します。
 取得したモデルを引数に <code>Remove</code> メソッドを呼び出します。
 <code>SaveChanges</code> メソッドを呼ぶと、実際にデータベースから削除されます。
 処理が完了したら <code>Create</code> アクションと同様に <code>Index</code> アクションにリダイレクトして一覧を表示します。</p>
-
 <p>これで、 <code>HomeController</code> に Create, Retivie, Update Delete の CRUDに対応したアクションがすべてそろいました。</p>
-
-<h2 id="viewをまとめる">Viewをまとめる</h2>
-
+<h2 id="view1">Viewをまとめる</h2>
 <p>これまで <code>View</code> には動作に必要な最低限の内容だけを書いてあります。
 また、TagHelperの利用など、アプリケーション内で共通な設定がそれぞれのViewに記述されています。</p>
-
 <p>すべてのViewで共通するレイアウトを作成してみましょう。</p>
-
 <pre><code>&lt;!doctype html&gt;
 &lt;html&gt;
     &lt;head&gt;
@@ -699,37 +534,23 @@ CREATE TABLE &quot;People&quot; (
         &lt;/div&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-
-<p><code>twitter-bootstrap</code> のスタイルを適用するレイアウトです。</p>
-
+</code></pre><p><code>twitter-bootstrap</code> のスタイルを適用するレイアウトです。</p>
 <p>レイアウトの中では <code>RenderBody()</code> メソッドを呼び出して、実際のViewの内容を表示します。</p>
-
 <p>レイアウトは <code>_Layout.cshtml</code> ファイルに作成します。
 コントローラーやアクション専用のViewは <code>Views/[コントローラー]/[アクション].cshtml</code> に配置されています。
 <code>_Layout.cshtml</code> は <code>Views/Shared</code> 以下の汎用のディレクトリに配置します。</p>
-
 <p>実際にレイアウトを適用するには、 それぞれの <code>View</code> の中で <code>Layout</code> 変数に利用するレイアウトのビュー名を設定します。</p>
-
 <pre><code>@{
     Layout = &quot;_Layout&quot;
 }
-</code></pre>
-
-<p>この処理をすべてのViewの中で書かずとも <code>_ViewStart.cshtml</code> に書いておくと、自動ですべてのViewで実行されるようになります。
+</code></pre><p>この処理をすべてのViewの中で書かずとも <code>_ViewStart.cshtml</code> に書いておくと、自動ですべてのViewで実行されるようになります。
 上記のレイアウト指定の内容で <code>Views/_ViewStart.cshtml</code> を作成しましょう。</p>
-
 <p>また、タグヘルパーなど複数の <code>View</code> で利用するライブラリがあります。
 これらの <code>import</code> は <code>_ViewStart.cshtml</code> に書いても効果はありません。
 <code>_ViewImports.cshtml</code> に共通に利用するライブラリなどの設定をまとめましょう。</p>
-
 <pre><code>@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-</code></pre>
-
-<p><code>_ViewImports.chtml</code> を作成したら、それぞれの <code>View</code> に書いていた <code>addTagHelper</code> の設定を削除しておきましょう。</p>
-
-<h1 id="まとめ">まとめ</h1>
-
+</code></pre><p><code>_ViewImports.chtml</code> を作成したら、それぞれの <code>View</code> に書いていた <code>addTagHelper</code> の設定を削除しておきましょう。</p>
+<h1 id="heading6">まとめ</h1>
 <ul>
 <li>ASP.NET Core MVC には ViewとControllerの仕組みが用意されている</li>
 <li>Model 部分には EntityFramework Core を利用する</li>
